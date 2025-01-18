@@ -230,6 +230,9 @@ _pkginfo.txt
 !?*.[Cc]ache/
 
 # Others
+Library/
+Temp/
+UserSettings/
 ClientBin/
 ~$*
 *~
