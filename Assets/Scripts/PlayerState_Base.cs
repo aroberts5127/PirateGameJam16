@@ -11,9 +11,10 @@ public class PlayerState_Base : MonoBehaviour
     [SerializeField]
     protected Transform movementGO;
 
-    public virtual void PerformAction()
+
+    public virtual void PerformAction(PlayerStats stats)
     {
-        Debug.Log("Base Interact Is Called");
+        //Debug.Log("Base Interact Is Called");
     }
 
     public Transform GetMovementGO()

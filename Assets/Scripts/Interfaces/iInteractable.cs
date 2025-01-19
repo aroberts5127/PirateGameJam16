@@ -8,5 +8,6 @@ using UnityEditor.Profiling.Memory.Experimental;
 /// </summary>
 public interface iInteractable
 {
+    void Interact();
     void Interact(PlayerState_Player interacter);
 }

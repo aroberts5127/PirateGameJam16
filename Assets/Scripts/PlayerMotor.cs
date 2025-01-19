@@ -15,7 +15,10 @@ public class PlayerMotor : MonoBehaviour
 
     [SerializeField]
     private float _baseSpeed;
+    [SerializeField]
+    private float _lookSpeed;
     private float _motorSpeed;
+    
 
     private float raycastDistance = 1f;
     [SerializeField]
@@ -35,7 +38,7 @@ public class PlayerMotor : MonoBehaviour
         {
             Vector3 slopeNormal = hit.normal;
             float slopeAngle = Vector3.Angle(slopeNormal, Vector3.up);
-            Debug.Log(slopeAngle);
+            //Debug.Log(slopeAngle);
             // Adjust vertical position based on the slope angle and movement
             if (slopeAngle > 5f)
 
@@ -55,7 +58,7 @@ public class PlayerMotor : MonoBehaviour
 
         Vector3 target = transform.position + vec.normalized;
         transform.parent.position = Vector3.MoveTowards(transform.position, target, _motorSpeed * Time.deltaTime);
-        transform.parent.rotation = Quaternion.LookRotation(vec, Vector3.up);
+        transform.parent.rotation = Quaternion.SlerpUnclamped(transform.parent.rotation, Quaternion.LookRotation(vec, Vector3.up), _lookSpeed * Time.deltaTime);
     }
 
     public void SetSprinting(bool isSprinting)

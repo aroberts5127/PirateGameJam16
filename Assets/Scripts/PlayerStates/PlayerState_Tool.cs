@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerState_Tool : PlayerState_Base, iDepossess, iInteractable, iControllable
+public class PlayerState_Tool : PlayerState_Base, iDepossess, iInteractable
 {
     // Start is called before the first frame update
     void Start()
@@ -10,13 +10,19 @@ public class PlayerState_Tool : PlayerState_Base, iDepossess, iInteractable, iCo
         PState = State.TOOL;
     }
 
-    public override void PerformAction()
+    public override void PerformAction(PlayerStats stats)
     {
         Debug.Log("Tool Interact Firing");
     }
 
 
-    void iInteractable.Interact(PlayerState_Player interacter)
+    void iInteractable.Interact()
+    {
+        //Not Used by this class
+    }
+
+
+   void iInteractable.Interact(PlayerState_Player interacter)
     {
         Debug.Log("Possessing Tool");
         //Need to Feedback and Take ownership of the PlayerInput Module;

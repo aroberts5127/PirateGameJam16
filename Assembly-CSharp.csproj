@@ -68,8 +68,8 @@
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Weapon.cs" />
     <Compile Include="Assets\Scripts\InteractableVisuals.cs" />
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Player.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\iControllable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\iInteractable.cs" />
+    <Compile Include="Assets\Scripts\PlayerStats.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

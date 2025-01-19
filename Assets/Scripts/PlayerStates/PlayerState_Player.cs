@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerState_Player : PlayerState_Base, iControllable
+public class PlayerState_Player : PlayerState_Base
 {
     private iInteractable interactableTarget;
 
@@ -12,7 +12,7 @@ public class PlayerState_Player : PlayerState_Base, iControllable
         origPlayerObject = this.gameObject;
     }
 
-    public override void PerformAction()
+    public override void PerformAction(PlayerStats stats)
     {
         if (interactableTarget == null)
         {
@@ -20,7 +20,6 @@ public class PlayerState_Player : PlayerState_Base, iControllable
             return;
         }
         interactableTarget.Interact(this);
-        //Assign new object's PlayerState_x.origPlayerObj with this.gameObject
     }
 
     public void setInteractableTarget(iInteractable obj)

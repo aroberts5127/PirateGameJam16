@@ -285,6 +285,10 @@ PrefabInstance:
       value: GroundTile01 (19)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -383,6 +387,10 @@ PrefabInstance:
       value: GroundTile01 (12)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -476,6 +484,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -573,6 +585,10 @@ PrefabInstance:
       value: GroundTile01 (8)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -635,6 +651,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -795,6 +815,10 @@ PrefabInstance:
       value: GroundTile01 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -859,6 +883,10 @@ PrefabInstance:
       value: GroundTile01 (13)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -921,6 +949,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -997,6 +1029,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e04e216f6d6489948a40be11e2abc3d2, type: 3}
       propertyPath: m_Name
       value: GroundTile02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e04e216f6d6489948a40be11e2abc3d2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e04e216f6d6489948a40be11e2abc3d2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1134,7 +1170,6 @@ GameObject:
   m_Component:
   - component: {fileID: 487411169}
   - component: {fileID: 487411170}
-  - component: {fileID: 487411171}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -1151,7 +1186,7 @@ Transform:
   m_GameObject: {fileID: 487411165}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1173,32 +1208,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PState: 0
   movementGO: {fileID: 1296960942}
---- !u!143 &487411171
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487411165}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &491146257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,6 +1626,10 @@ PrefabInstance:
       value: GroundTile01 (11)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -1821,6 +1834,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2114,6 +2131,10 @@ PrefabInstance:
       value: GroundTile01 (15)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -2259,6 +2280,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2452,7 +2477,7 @@ Transform:
   m_GameObject: {fileID: 1028880437}
   serializedVersion: 2
   m_LocalRotation: {x: 0.31739295, y: 0, z: 0, w: 0.9482941}
-  m_LocalPosition: {x: 0, y: 5.88, z: -7.8}
+  m_LocalPosition: {x: 0, y: 6.04, z: -7.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2543,6 +2568,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2777,6 +2806,10 @@ PrefabInstance:
       value: GroundTile01 (6)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -2839,6 +2872,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3034,6 +3071,7 @@ GameObject:
   - component: {fileID: 1296960942}
   - component: {fileID: 1296960944}
   - component: {fileID: 1296960943}
+  - component: {fileID: 1296960945}
   m_Layer: 0
   m_Name: PlayerMovement
   m_TagString: Untagged
@@ -3069,6 +3107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseSpeed: 5
+  _lookSpeed: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &1296960944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3081,6 +3123,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b43901803a3b24981b2be66cdd724d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1296960945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296960941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e870faad4ad93943a40db6b5635bdf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentStamina: 0
+  maxStamina: 5
+  staminaRechargeRate: 4
 --- !u!1001 &1342821055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3132,6 +3189,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3260,6 +3321,10 @@ PrefabInstance:
       value: GroundTile01 (14)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3336,7 +3401,7 @@ Transform:
   m_GameObject: {fileID: 1488014328}
   serializedVersion: 2
   m_LocalRotation: {x: 0.31739295, y: 0, z: 0, w: 0.9482941}
-  m_LocalPosition: {x: 0, y: 5.88, z: -7.8}
+  m_LocalPosition: {x: 0, y: 6.04, z: -7.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3394,6 +3459,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3522,6 +3591,10 @@ PrefabInstance:
       value: GroundTile01 (24)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3584,6 +3657,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3681,6 +3758,10 @@ PrefabInstance:
       value: GroundTile01 (7)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3743,6 +3824,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3809,6 +3894,10 @@ PrefabInstance:
       value: GroundTile01 (16)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -3871,6 +3960,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3966,6 +4059,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4169,6 +4266,10 @@ PrefabInstance:
       value: GroundTile01 (18)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -4293,6 +4394,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_Name
       value: GroundTile01 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8eb5499717c4d2a4c9106408addd61c6, type: 3}
       propertyPath: m_StaticEditorFlags

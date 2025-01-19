@@ -6,6 +6,7 @@ public class PlayerInput : MonoBehaviour
 {
     private Vector3 _curMoveVector;
     private PlayerMotor _motor;
+    private PlayerStats _stats;
     private PlayerState_Base _state;
 
 
@@ -13,6 +14,7 @@ public class PlayerInput : MonoBehaviour
     void Start()
     {
         _motor = GetComponent<PlayerMotor>();
+        _stats = GetComponent<PlayerStats>();
     }
 
     void Update()
@@ -29,7 +31,8 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            transform.GetComponentInParent<PlayerState_Base>().PerformAction();
+            if (_stats.CheckStaminaForActionInput())
+                GetComponentInParent<PlayerState_Base>().PerformAction(_stats);
         }
 
         if (Input.GetKeyDown(KeyCode.Q))

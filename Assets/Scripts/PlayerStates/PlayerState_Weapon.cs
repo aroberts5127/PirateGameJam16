@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable, iControllable
+public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
 {
     [SerializeField] GameObject geometry;
     [SerializeField] GameObject indicator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,15 +14,28 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable, i
         indicator.SetActive(false);
     }
 
-    public override void PerformAction()
+    void Update()
     {
+        
+    }
+
+    public override void PerformAction(PlayerStats stats)
+    {
+
         Debug.Log("Attacking");
+        stats.SubtractStaminaForAction(GetComponent<iDepossess>());
+        
     }
 
 
+    void iInteractable.Interact()
+    {
+        //Debug.Log("here?");
+        //Not Used by this class
+    }
     void iInteractable.Interact(PlayerState_Player interacter)
     {
-        Debug.Log("Interacting with Weapon: " + gameObject.name);
+        //Debug.Log("Interacting with Weapon: " + gameObject.name);
         //Take Control
         movementGO = interacter.GetMovementGO();
         movementGO.SetParent(this.gameObject.transform);
@@ -36,7 +50,7 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable, i
 
     void iDepossess.depossess()
     {
-        Debug.Log("Weapon Depossess Called");
+        //Debug.Log("Weapon Depossess Called");
         movementGO.SetParent(origPlayerObject.transform);
         movementGO.transform.position = origPlayerObject.transform.position;
         geometry.GetComponent<BoxCollider>().enabled = false;
@@ -44,4 +58,6 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable, i
         this.GetComponent<BoxCollider>().enabled = true;
         indicator.SetActive(false);
     }
+
+
 }
