@@ -66,7 +66,7 @@
     <Compile Include="Assets\Scripts\Interfaces\iDeposses.cs" />
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Tool.cs" />
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Weapon.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\InteractableVisuals.cs" />
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Player.cs" />
     <Compile Include="Assets\Scripts\Interfaces\iControllable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\iInteractable.cs" />

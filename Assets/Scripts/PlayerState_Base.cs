@@ -8,9 +8,16 @@ public class PlayerState_Base : MonoBehaviour
 {
     public State PState;
     protected GameObject origPlayerObject;
+    [SerializeField]
+    protected Transform movementGO;
 
     public virtual void PerformAction()
     {
         Debug.Log("Base Interact Is Called");
+    }
+
+    public Transform GetMovementGO()
+    {
+        return movementGO;
     }
 }

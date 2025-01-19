@@ -1,4 +1,6 @@
 
+using UnityEditor.Profiling.Memory.Experimental;
+
 /// <summary>
 /// This goes on gameObjects that can be interacted with. 
 /// Possessable Items Interact will be to Possess.
@@ -6,5 +8,5 @@
 /// </summary>
 public interface iInteractable
 {
-    void Interact();
+    void Interact(PlayerState_Player interacter);
 }

@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerState_Player : PlayerState_Base
+public class PlayerState_Player : PlayerState_Base, iControllable
 {
     private iInteractable interactableTarget;
-
 
     void Start()
     {
@@ -20,7 +19,20 @@ public class PlayerState_Player : PlayerState_Base
             Debug.Log("Nothing to Interact With");
             return;
         }
-        interactableTarget.Interact();
+        interactableTarget.Interact(this);
         //Assign new object's PlayerState_x.origPlayerObj with this.gameObject
     }
+
+    public void setInteractableTarget(iInteractable obj)
+    {
+        interactableTarget = obj;
+    }
+
+    public void resetInteractableTarget()
+    {
+        interactableTarget = null;
+    }
+
+    
+
 }
