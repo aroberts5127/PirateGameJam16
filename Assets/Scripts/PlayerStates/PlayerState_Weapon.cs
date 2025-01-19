@@ -40,8 +40,8 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
         movementGO = interacter.GetMovementGO();
         movementGO.SetParent(this.gameObject.transform);
         movementGO.transform.position = this.transform.position;
-        geometry.GetComponent<BoxCollider>().enabled = true;
-        geometry.transform.position += Vector3.up;
+        geometry.GetComponent<Animator>().enabled = true;
+        geometry.GetComponent<Animator>().Play("Rise");
         this.GetComponent<BoxCollider>().enabled = false;
         GetComponent<InteractableVisuals>().DisableInteractPrompt();
         origPlayerObject = interacter.gameObject;
@@ -53,8 +53,9 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
         //Debug.Log("Weapon Depossess Called");
         movementGO.SetParent(origPlayerObject.transform);
         movementGO.transform.position = origPlayerObject.transform.position;
-        geometry.GetComponent<BoxCollider>().enabled = false;
-        geometry.transform.position -= Vector3.up;
+        //geometry.GetComponent<BoxCollider>().enabled = false;
+        geometry.GetComponent<Animator>().Play("Falling");
+        //geometry.transform.position -= Vector3.up;
         this.GetComponent<BoxCollider>().enabled = true;
         indicator.SetActive(false);
     }
