@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[RequireComponent(typeof(PlayerMotor))]
 public class PlayerInput : MonoBehaviour
 {
     private Vector3 _curMoveVector;
@@ -37,6 +35,11 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Debug.Log((transform.GetComponentInParent<iDepossess>()) == null);
+            if (GetComponentInParent<iDepossess>() != null)
+            {
+                transform.GetComponentInParent<iDepossess>().depossess();
+            }
+
         }
     }
 }
