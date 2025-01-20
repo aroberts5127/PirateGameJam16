@@ -10,12 +10,18 @@ public class EnemyStats : MonoBehaviour
     private float maxHealth;
     [SerializeField]
     private float curHealth;
+
+    private bool canTakeDamage;
+    private float noDamageTimer;
+    private float takeDamageDelay = 2.0f;
     [SerializeField]
     private WeaponDrops weaponDrops;
     // Start is called before the first frame update
     void Start()
     {
         curHealth = maxHealth;
+        canTakeDamage = true;
+        noDamageTimer = 0.0f;
     }
 
     // Update is called once per frame
@@ -23,13 +29,36 @@ public class EnemyStats : MonoBehaviour
     {
         if (curHealth <= 0)
             Die();
+        if (!canTakeDamage)
+        {
+            if (noDamageTimer < takeDamageDelay)
+            {
+                noDamageTimer += Time.deltaTime;
+            }
+            else
+            {
+                canTakeDamage = true;
+                noDamageTimer = 0.0f;
+            }
+        }
+        
+    }
+
+    public void TakeDamage()
+    {
+        if (!canTakeDamage)
+        {
+            return;
+        }
+        canTakeDamage = false;
+        Debug.Log("Taking Damange");
+        curHealth -= 1;
+        
     }
 
 
     private void Die()
     {
-        //drop weapon object
-        //visually remove object
-        //Discard this object either with Destory or Back to pool
+        this.transform.parent.gameObject.SetActive(false);
     }
 }

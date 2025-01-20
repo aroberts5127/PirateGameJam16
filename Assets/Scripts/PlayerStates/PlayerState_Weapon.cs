@@ -6,6 +6,7 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
 {
     [SerializeField] GameObject geometry;
     [SerializeField] GameObject indicator;
+    [SerializeField] GameObject hitBox;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +22,9 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
 
     public override void PerformAction(PlayerStats stats)
     {
-
         Debug.Log("Attacking");
-        stats.SubtractStaminaForAction(GetComponent<iDepossess>());
-        
+        StartCoroutine(Attack(stats));
+        //stats.SubtractStaminaForAction(GetComponent<iDepossess>());
     }
 
 
@@ -58,6 +58,17 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
         //geometry.transform.position -= Vector3.up;
         this.GetComponent<BoxCollider>().enabled = true;
         indicator.SetActive(false);
+    }
+
+
+    private IEnumerator Attack(PlayerStats stats)
+    {
+        hitBox.SetActive(true);
+        //Geometry.GetComponent<Animator>().Play("Attack");
+        yield return new WaitForSeconds(2.5f);
+        stats.SubtractStaminaForAction(GetComponent<iDepossess>());
+        hitBox.SetActive(false);
+
     }
 
 

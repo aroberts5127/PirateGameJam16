@@ -16,8 +16,14 @@ public class EnemyDetection : MonoBehaviour
     public float viewAngle;
 
     public Transform playerRef;
-
-    public bool canSeePlayer;
+    [SerializeField]
+    public bool canSeePlayer; 
+    [SerializeField]
+    private bool lostPlayerTimerActive;
+    [SerializeField]
+    private float lostPlayerTimer = 0.0f;
+    [SerializeField]
+    private float lostPlayerActionTime = 3.0f;
 
     public event Action<Transform> playerSeenAction;
     public event Action playerLostAction;
@@ -28,12 +34,22 @@ public class EnemyDetection : MonoBehaviour
     {
         playerRef = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(FieldOfViewRoutine());
+        lostPlayerTimerActive = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (lostPlayerTimerActive)
+        {
+            lostPlayerTimer += Time.deltaTime;
+            if (lostPlayerTimer > lostPlayerActionTime)
+            {
+                lostPlayerTimer = 0;
+                lostPlayerTimerActive = false;
+                LostPlayer();
+            }
+        }
     }
 
     private IEnumerator FieldOfViewRoutine()
@@ -60,20 +76,29 @@ public class EnemyDetection : MonoBehaviour
 
             if (Vector3.Angle(transform.forward, directionToTarget) < viewAngle / 2)
             {
-                float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                //distanceToTarget is used in the example for a raycast to detect blockers. Will Likely need as the scene grows
+                float distanceToTarget = Vector3.Distance(transform.position, target.position); 
                 canSeePlayer = true;
+                lostPlayerTimerActive = false;
+                lostPlayerTimer = 0.0f;
                 SeesPlayer();
             }
             else
             {
+                if(canSeePlayer)
+                    lostPlayerTimerActive = true;
                 canSeePlayer = false;
-                LostPlayer();
+                
+                //LostPlayer();
             }
         }
         else
         {
+            if(canSeePlayer)
+                lostPlayerTimerActive = true;
             canSeePlayer = false;
-            LostPlayer();
+            
+            //LostPlayer();
         }
     }
 
@@ -86,4 +111,5 @@ public class EnemyDetection : MonoBehaviour
     {
         playerLostAction?.Invoke();
     }
+
 }

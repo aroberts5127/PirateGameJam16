@@ -40,14 +40,15 @@ public class EnemyMovement : MonoBehaviour
         {
             if (Vector3.Distance(agent.transform.position, _target.position) < 0.1f)
             {
-                Debug.Log("Choosing New Target)");
+                //Debug.Log("Choosing New Target)");
                 ChooseNewTarget();               
                 //Works - ToDo: Make enemy stop at each point for a bit, and look around before continuing.
             }         
         }
         if (currentState == EnemyState.HUNTING)
         {
-            Hunt();
+            if(Vector3.Distance(agent.transform.position, _playerTarget.position) < GetComponent<EnemyDetection>().raycastDistance * 1.5f)
+                Hunt();
         }
         
     }
@@ -68,7 +69,7 @@ public class EnemyMovement : MonoBehaviour
         this.GetComponent<EnemyDetection>().playerSeenAction -= StartHuntListener;
         this.GetComponent<EnemyDetection>().playerLostAction += PlayerLostListener;
         currentState = EnemyState.HUNTING;
-        agent.isStopped = true;
+        //agent.isStopped = true;
         _playerTarget = player;
     }
 
@@ -79,7 +80,7 @@ public class EnemyMovement : MonoBehaviour
         this.GetComponent<EnemyDetection>().playerLostAction -= PlayerLostListener;
         this.GetComponent<EnemyDetection>().playerSeenAction += StartHuntListener;
         currentState = EnemyState.PATROL;
-        agent.isStopped = false;
+        //agent.isStopped = false;
         agent.SetDestination(_target.position);
         _playerTarget = null;
     }
@@ -87,7 +88,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void Hunt()
     {
-        Debug.Log("Hunting");
+        //Debug.Log("Hunting");
+        agent.SetDestination(_playerTarget.position);
     }
 
     private void Attack()

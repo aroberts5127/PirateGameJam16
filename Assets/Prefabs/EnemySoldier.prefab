@@ -68,6 +68,9 @@ MonoBehaviour:
   viewAngle: 103
   playerRef: {fileID: 0}
   canSeePlayer: 0
+  lostPlayerTimerActive: 0
+  lostPlayerTimer: 0
+  lostPlayerActionTime: 3
 --- !u!114 &3136682733506107702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,6 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   movementRadius: 5
+  currentState: 0
   waypointSet: {fileID: 0}
   targetIDModifier: 1
 --- !u!1 &3567102354778573342
@@ -198,6 +202,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 257210346789961759}
+  - component: {fileID: 2854163854283665980}
+  - component: {fileID: 5644661864174035145}
   m_Layer: 8
   m_Name: GFX
   m_TagString: Untagged
@@ -221,6 +227,32 @@ Transform:
   - {fileID: 8757479082849750917}
   m_Father: {fileID: 859048893207307601}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2854163854283665980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6068382170028873913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc78c48b39730c4b9331b28a08b6165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptParent: {fileID: 1339690651470662754}
+--- !u!114 &5644661864174035145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6068382170028873913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc78c48b39730c4b9331b28a08b6165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptParent: {fileID: 1339690651470662754}
 --- !u!1 &8448656064947013526
 GameObject:
   m_ObjectHideFlags: 0
