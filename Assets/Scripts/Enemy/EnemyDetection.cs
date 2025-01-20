@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class EnemyDetection : MonoBehaviour
     public Transform playerRef;
 
     public bool canSeePlayer;
+
+    public event Action<Transform> playerSeenAction;
 
 
     // Start is called before the first frame update
@@ -58,6 +61,7 @@ public class EnemyDetection : MonoBehaviour
             {
                 float distanceToTarget = Vector3.Distance(transform.position, target.position);
                 canSeePlayer = true;
+                SeesPlayer();
             }
             else
                 canSeePlayer = false;
@@ -66,5 +70,10 @@ public class EnemyDetection : MonoBehaviour
         {
             canSeePlayer = false;
         }
+    }
+
+    public void SeesPlayer()
+    {
+        playerSeenAction.Invoke(playerRef);
     }
 }
