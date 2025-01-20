@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField]
     private float movementRadius;
+    [SerializeField]
     private EnemyState currentState;
     [SerializeField]
     private WaypointGroup waypointSet;
@@ -30,6 +31,7 @@ public class EnemyMovement : MonoBehaviour
         _target = waypointSet.GetWaypoints()[targetID].transform;
         agent.SetDestination(_target.position);
         this.GetComponent<EnemyDetection>().playerSeenAction += StartHuntListener;
+        
     }
 
     private void Update()
@@ -61,9 +63,25 @@ public class EnemyMovement : MonoBehaviour
 
     void StartHuntListener(Transform player)
     {
+        if (currentState == EnemyState.HUNTING)
+            return;
+        this.GetComponent<EnemyDetection>().playerSeenAction -= StartHuntListener;
+        this.GetComponent<EnemyDetection>().playerLostAction += PlayerLostListener;
         currentState = EnemyState.HUNTING;
         agent.isStopped = true;
         _playerTarget = player;
+    }
+
+    void PlayerLostListener()
+    {
+        if (currentState == EnemyState.PATROL)
+            return;
+        this.GetComponent<EnemyDetection>().playerLostAction -= PlayerLostListener;
+        this.GetComponent<EnemyDetection>().playerSeenAction += StartHuntListener;
+        currentState = EnemyState.PATROL;
+        agent.isStopped = false;
+        agent.SetDestination(_target.position);
+        _playerTarget = null;
     }
 
 

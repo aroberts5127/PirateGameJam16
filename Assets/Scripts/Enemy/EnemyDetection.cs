@@ -20,6 +20,7 @@ public class EnemyDetection : MonoBehaviour
     public bool canSeePlayer;
 
     public event Action<Transform> playerSeenAction;
+    public event Action playerLostAction;
 
 
     // Start is called before the first frame update
@@ -64,16 +65,25 @@ public class EnemyDetection : MonoBehaviour
                 SeesPlayer();
             }
             else
+            {
                 canSeePlayer = false;
+                LostPlayer();
+            }
         }
         else
         {
             canSeePlayer = false;
+            LostPlayer();
         }
     }
 
     public void SeesPlayer()
     {
-        playerSeenAction.Invoke(playerRef);
+        playerSeenAction?.Invoke(playerRef);
+    }
+
+    public void LostPlayer()
+    {
+        playerLostAction?.Invoke();
     }
 }
