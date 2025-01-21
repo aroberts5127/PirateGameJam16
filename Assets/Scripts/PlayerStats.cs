@@ -81,5 +81,6 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("Player Is Dead");
         currentHealth = maxHealth;
         PlayerHealthAction?.Invoke(currentHealth, maxHealth);
+        //Revive Probably needs to happen via Menu? Pressing a ressurect button will help the player control pace of play.
     }
 }
