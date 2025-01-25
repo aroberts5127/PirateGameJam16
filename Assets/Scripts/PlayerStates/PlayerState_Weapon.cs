@@ -65,9 +65,11 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
 
     private IEnumerator Attack(PlayerStats stats)
     {
-        hitBox.SetActive(true);
+        geometry.GetComponent<Animator>().SetTrigger("AttackTrigger");
+        yield return new WaitForSeconds(0.5f);
+        hitBox.SetActive(true);      
         //Geometry.GetComponent<Animator>().Play("Attack");
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(0.5f);
         stats.SubtractStaminaForAction(GetComponent<iDepossess>());
         hitBox.SetActive(false);
 
