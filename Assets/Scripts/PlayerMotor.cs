@@ -23,9 +23,14 @@ public class PlayerMotor : MonoBehaviour
     private float raycastDistance = 1f;
     [SerializeField]
     private LayerMask groundLayer;
+    [SerializeField]
+    Animator playerAnimator;
+    private bool _isInPlayerBody;
     // Start is called before the first frame update
     void Start()
     {
+        PlayerState_Player.PlayerInBody += SetPlayerPossessing;
+        _isInPlayerBody = true;
     }
 
     // Update is called once per frame
@@ -54,8 +59,13 @@ public class PlayerMotor : MonoBehaviour
 
     public void MovePlayer(Vector3 vec)
     {
-        if(vec == Vector3.zero) return;
-
+        if (vec == Vector3.zero)
+        {
+            playerAnimator.SetBool("IsMoving", false);
+            return;
+        }
+        if(_isInPlayerBody)
+            playerAnimator.SetBool("IsMoving", true);
         Vector3 target = transform.position + vec.normalized;
         transform.parent.position = Vector3.MoveTowards(transform.position, target, _motorSpeed * Time.deltaTime);
         transform.parent.rotation = Quaternion.SlerpUnclamped(transform.parent.rotation, Quaternion.LookRotation(vec, Vector3.up), _lookSpeed * Time.deltaTime);
@@ -64,5 +74,11 @@ public class PlayerMotor : MonoBehaviour
     public void SetSprinting(bool isSprinting)
     {
         _motorSpeed = isSprinting ? _baseSpeed * 1.5f : _baseSpeed;
+        playerAnimator.SetBool("IsRunning",isSprinting);
+    }
+
+    public void SetPlayerPossessing(bool isPlayerPossessed)
+    {
+        _isInPlayerBody = isPlayerPossessed;
     }
 }

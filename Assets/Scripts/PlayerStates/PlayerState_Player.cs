@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class PlayerState_Player : PlayerState_Base
 {
     private iInteractable interactableTarget;
+    public static event Action<bool> PlayerInBody;
 
     void Start()
     {
@@ -20,6 +22,7 @@ public class PlayerState_Player : PlayerState_Base
             return;
         }
         interactableTarget.Interact(this);
+        interactableTarget = null;
     }
 
     public void setInteractableTarget(iInteractable obj)
@@ -32,6 +35,9 @@ public class PlayerState_Player : PlayerState_Base
         interactableTarget = null;
     }
 
-    
+    public void InvokePlayerInBody(bool inBody)
+    {
+        PlayerInBody?.Invoke(inBody);
+    }
 
 }

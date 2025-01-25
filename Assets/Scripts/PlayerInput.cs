@@ -22,10 +22,7 @@ public class PlayerInput : MonoBehaviour
         _curMoveVector.x = Input.GetAxis("Horizontal");
         _curMoveVector.z = Input.GetAxis("Vertical");
 
-        if (_curMoveVector != Vector3.zero)
-        {
-            _motor.MovePlayer(_curMoveVector);
-        }
+        _motor.MovePlayer(_curMoveVector);
 
         _motor.SetSprinting(Input.GetKey(KeyCode.LeftShift));
 
@@ -37,7 +34,7 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Debug.Log((transform.GetComponentInParent<iDepossess>()) == null);
+            //Debug.Log((transform.GetComponentInParent<iDepossess>()) == null);
             if (GetComponentInParent<iDepossess>() != null)
             {
                 transform.GetComponentInParent<iDepossess>().depossess();

@@ -1,6 +1,3 @@
-
-using UnityEditor.Profiling.Memory.Experimental;
-
 /// <summary>
 /// This goes on gameObjects that can be interacted with. 
 /// Possessable Items Interact will be to Possess.
