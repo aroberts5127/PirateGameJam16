@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -20,40 +21,24 @@ public class PlayerMotor : MonoBehaviour
     private float _motorSpeed;
     
 
-    private float raycastDistance = 1f;
+    private float raycastDistance = 0.2f;
     [SerializeField]
     private LayerMask groundLayer;
     [SerializeField]
     Animator playerAnimator;
     private bool _isInPlayerBody;
+    private Transform parent;
     // Start is called before the first frame update
     void Start()
     {
         PlayerState_Player.PlayerInBody += SetPlayerPossessing;
         _isInPlayerBody = true;
+        parent = transform.parent.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance, groundLayer))
-        {
-            Vector3 slopeNormal = hit.normal;
-            float slopeAngle = Vector3.Angle(slopeNormal, Vector3.up);
-            //Debug.Log(slopeAngle);
-            // Adjust vertical position based on the slope angle and movement
-            if (slopeAngle > 5f)
-
-            {
-                Vector3 newPosition = transform.parent.transform.position;
-                newPosition.y = hit.point.y + (transform.localScale.y / 2f); // Adjust based on your object's height
-                transform.parent.transform.position = newPosition;
-            }
-
-        }
 
     }
 
@@ -67,8 +52,8 @@ public class PlayerMotor : MonoBehaviour
         if(_isInPlayerBody)
             playerAnimator.SetBool("IsMoving", true);
         Vector3 target = transform.position + vec.normalized;
-        transform.parent.position = Vector3.MoveTowards(transform.position, target, _motorSpeed * Time.deltaTime);
-        transform.parent.rotation = Quaternion.SlerpUnclamped(transform.parent.rotation, Quaternion.LookRotation(vec, Vector3.up), _lookSpeed * Time.deltaTime);
+        parent.position = Vector3.MoveTowards(transform.position, target, _motorSpeed * Time.deltaTime);
+        parent.rotation = Quaternion.SlerpUnclamped(parent.rotation, Quaternion.LookRotation(vec, Vector3.up), _lookSpeed * Time.deltaTime);
     }
 
     public void SetSprinting(bool isSprinting)
