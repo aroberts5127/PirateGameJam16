@@ -40,4 +40,9 @@ public class PlayerState_Player : PlayerState_Base
         PlayerInBody?.Invoke(inBody);
     }
 
+    public void StopMovementForPlayer()
+    {
+        this.GetComponentInChildren<PlayerInput>().SetInputsOff();
+    }
+
 }

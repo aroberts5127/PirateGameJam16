@@ -9,37 +9,51 @@ public class PlayerInput : MonoBehaviour
     private PlayerStats _stats;
     private PlayerState_Base _state;
 
-
+    private bool _paused = false;
 
     void Start()
     {
         _motor = GetComponent<PlayerMotor>();
         _stats = GetComponent<PlayerStats>();
+        _paused = false;
+        CutsceneDialogueController.endDialogueAction += SetInputsOn;
     }
 
     void Update()
     {
-        _curMoveVector.x = Input.GetAxis("Horizontal");
-        _curMoveVector.z = Input.GetAxis("Vertical");
-
-        _motor.MovePlayer(_curMoveVector);
-
-        _motor.SetSprinting(Input.GetKey(KeyCode.LeftShift));
-
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (!_paused)
         {
-            if (_stats.CheckStaminaForActionInput())
-                GetComponentInParent<PlayerState_Base>().PerformAction(_stats);
-        }
+            _curMoveVector.x = Input.GetAxis("Horizontal");
+            _curMoveVector.z = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            //Debug.Log((transform.GetComponentInParent<iDepossess>()) == null);
-            if (GetComponentInParent<iDepossess>() != null)
+            _motor.MovePlayer(_curMoveVector);
+
+            _motor.SetSprinting(Input.GetKey(KeyCode.LeftShift));
+
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                transform.GetComponentInParent<iDepossess>().depossess();
+                if (_stats.CheckStaminaForActionInput())
+                    GetComponentInParent<PlayerState_Base>().PerformAction(_stats);
             }
 
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                //Debug.Log((transform.GetComponentInParent<iDepossess>()) == null);
+                if (GetComponentInParent<iDepossess>() != null)
+                {
+                    transform.GetComponentInParent<iDepossess>().depossess();
+                }
+
+            }
         }
+    }
+
+    public void SetInputsOff()
+    {
+        _paused = true;
+    }
+    public void SetInputsOn()
+    {
+        _paused = false;
     }
 }

@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Enemy\WaypointGroup.cs" />
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Weapon.cs" />
     <Compile Include="Assets\Scripts\InteractableVisuals.cs" />
+    <Compile Include="Assets\Scripts\EnvironmentInteractable.cs" />
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Player.cs" />
     <Compile Include="Assets\Scripts\UI\HealthBar.cs" />
     <Compile Include="Assets\Scripts\WeaponDamageDetector.cs" />

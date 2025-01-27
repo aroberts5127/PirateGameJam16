@@ -7,14 +7,14 @@ public class InteractableVisuals : MonoBehaviour
 
     [SerializeField]
     private GameObject interactPrompt;
-    private PlayerState_Weapon weaponParent;
+    private iInteractable interactableParent;
     private PlayerState_Player playerState;
     // Start is called before the first frame update
     void Start()
     {
         playerState = null;
         interactPrompt.SetActive(false);
-        weaponParent = GetComponent<PlayerState_Weapon>();
+        interactableParent = GetComponent<iInteractable>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,7 +23,7 @@ public class InteractableVisuals : MonoBehaviour
         {
             playerState = other.GetComponent<PlayerState_Player>();
             interactPrompt.SetActive(true);
-            playerState?.setInteractableTarget(weaponParent);
+            playerState?.setInteractableTarget(interactableParent);
         }
     }
 
