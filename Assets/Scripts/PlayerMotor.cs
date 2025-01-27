@@ -21,7 +21,7 @@ public class PlayerMotor : MonoBehaviour
     private float _motorSpeed;
     
 
-    private float raycastDistance = 0.2f;
+    //private float raycastDistance = 0.2f;
     [SerializeField]
     private LayerMask groundLayer;
     [SerializeField]

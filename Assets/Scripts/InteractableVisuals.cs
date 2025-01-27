@@ -19,9 +19,9 @@ public class InteractableVisuals : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponentInParent<PlayerState_Base>().PState == State.PLAYER)
+        if (other.GetComponent<PlayerState_Base>().PState == State.PLAYER)
         {
-            playerState = other.GetComponentInParent<PlayerState_Player>();
+            playerState = other.GetComponent<PlayerState_Player>();
             interactPrompt.SetActive(true);
             playerState?.setInteractableTarget(weaponParent);
         }
