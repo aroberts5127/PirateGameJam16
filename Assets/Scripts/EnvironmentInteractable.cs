@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EnvironmentInteractable : MonoBehaviour, iInteractable
 {
-
+    [SerializeField]
+    private string dialogueID;
+    private DialogueData data;
     public void Interact()
     {
         
@@ -12,15 +14,15 @@ public class EnvironmentInteractable : MonoBehaviour, iInteractable
 
     public void Interact(PlayerState_Player interacter)
     {
-        CutsceneDialogueController.TriggerDialogueAction("Protag", "I have interacted with this sign. It says nothing important");
+        CutsceneDialogueController.TriggerMonologueAction(data);
         //Freeze Input for Player
         interacter.StopMovementForPlayer();
     }
 
     // Start is called before the first frame update
     void Start()
-    {
-        
+    { 
+      data = DialogueDataProvider.Instance.RetrieveDialogueByEventID(dialogueID);  
     }
 
     // Update is called once per frame

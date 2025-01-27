@@ -92,9 +92,9 @@ public class CutsceneDialogueController : MonoBehaviour
         endDialogueAction?.Invoke();
     }
 
-    public static void TriggerDialogueAction(string speaker, string dialogue)
+    public static void TriggerMonologueAction(DialogueData data)
     {
-        newDialogueAction?.Invoke(speaker, dialogue);
+        newDialogueAction?.Invoke(data.speaker1, data.textBody);
     }
 
 }
