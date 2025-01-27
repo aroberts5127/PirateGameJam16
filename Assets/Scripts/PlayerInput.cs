@@ -46,6 +46,11 @@ public class PlayerInput : MonoBehaviour
 
             }
         }
+        else
+        {
+            _motor.MovePlayer(Vector3.zero);
+        }
+        
     }
 
     public void SetInputsOff()

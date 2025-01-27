@@ -9,7 +9,7 @@ public class DialogueDataProvider : MonoBehaviour
     public Dictionary<string, DialogueData> dialogueDataSet;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (Instance != null)
         {
@@ -43,7 +43,6 @@ public class DialogueDataProvider : MonoBehaviour
                 string[] values = line.Split(",");
                 for (int i = 0; i < values.Length; i++)
                 {
-                    
                     string key = headers[i];
                     string data = values[i];
                     if (key == "eventID")
@@ -63,8 +62,9 @@ public class DialogueDataProvider : MonoBehaviour
                         dialogueData.textBody = data;
                     }
                 }
-                Debug.Log("KEY: " + dictKey + ", DATA: " + dialogueData.speaker1 + ", " + dialogueData.speaker2 + ", " + dialogueData.textBody);
+                //Debug.Log("KEY: " + dictKey + ", DATA: " + dialogueData.speaker1 + ", " + dialogueData.speaker2 + ", " + dialogueData.textBody);
                 dialogueDataSet.Add(dictKey, dialogueData);
+
             }
         }
         

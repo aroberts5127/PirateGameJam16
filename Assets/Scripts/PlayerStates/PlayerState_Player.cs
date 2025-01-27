@@ -45,4 +45,9 @@ public class PlayerState_Player : PlayerState_Base
         this.GetComponentInChildren<PlayerInput>().SetInputsOff();
     }
 
+    public void ForcePerformAction()
+    {
+        PerformAction(null);
+    }
+
 }
