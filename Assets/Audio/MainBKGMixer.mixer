@@ -26,7 +26,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NewAudioMixer
+  m_Name: MainBKGMixer
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -55,6 +55,7 @@ AudioMixerGroupController:
   m_Effects:
   - {fileID: 24400004}
   - {fileID: -822486106940412305}
+  - {fileID: 1364679913795118841}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -84,17 +85,42 @@ AudioMixerSnapshotController:
   m_SnapshotID: c1c25861e2b05924693e5abb56f0d853
   m_FloatValues:
     d78cf0b05d1874640bd1dc1b672dca4b: 1.78
+    2e378cc0c5ff28b428494d0535191cfe: 4.44
     564eba513c7e1f54c8924f7eb1a297b6: 0
     c03eb4a3a1b99bc45864f91b9ce485df: 1
     a4550bd5d3ffd3542b49e3bf602c84e1: 0.684
+    bc390cd597fb08a409146d0dd0298908: 2.36
     8ecc9d56443e2564eb7db9b26b11dd7f: 20
     237df9e7e380d1e48ae04b5c3a320eec: 10.2
+    ba5a198839aaaf04ab11e4aa3c0867b6: 10101.867
+    a66eaa2a203053e48b0864b55eacee2d: 723
     c7e94c4a562e1be4aa9caf292073a609: 1
     8b1f303b584e97b43af469235447fbad: 2404
     05fb538bb0e250541ad417a5147175db: 988
     176d993c6a94c4242b00824229a0fbde: -0.14
     83c9815ce7e7e9249b2770ea926b0e24: 0.421
     b945970d931fab940877685fa6d23d3c: 0.158
-    c5c3f27d3407afb4a86c33f97b4c818b: -9.6
+    c5c3f27d3407afb4a86c33f97b4c818b: -14.9
+    07cde91ed075e3648bac953525d36695: 0.42999998
     2f5be15f3bcf5014ca60ab28001ec1bf: 0
   m_TransitionOverrides: {}
+--- !u!244 &1364679913795118841
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 64181a38265bba748904e88b2c060586
+  m_EffectName: ParamEQ
+  m_MixLevel: b3b272082040b0a4fbc45fb1a4db31dc
+  m_Parameters:
+  - m_ParameterName: Center freq
+    m_GUID: ba5a198839aaaf04ab11e4aa3c0867b6
+  - m_ParameterName: Octave range
+    m_GUID: 2e378cc0c5ff28b428494d0535191cfe
+  - m_ParameterName: Frequency gain
+    m_GUID: 07cde91ed075e3648bac953525d36695
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
