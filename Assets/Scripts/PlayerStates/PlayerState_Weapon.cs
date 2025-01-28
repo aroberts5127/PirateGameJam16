@@ -40,6 +40,7 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
         movementGO = interacter.GetMovementGO();
         movementGO.SetParent(this.gameObject.transform);
         movementGO.transform.position = this.transform.position;
+        //movementGO.GetComponent<PlayerMotor>().SetAnimator(geometry.GetComponent<Animator>());
         geometry.GetComponent<Animator>().enabled = true;
         geometry.GetComponent<Animator>().Play("Rise");
         this.GetComponent<BoxCollider>().enabled = false;

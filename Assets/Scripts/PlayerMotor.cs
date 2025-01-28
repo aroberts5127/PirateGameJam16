@@ -49,8 +49,12 @@ public class PlayerMotor : MonoBehaviour
             playerAnimator.SetBool("IsMoving", false);
             return;
         }
-        if(_isInPlayerBody)
+        if (_isInPlayerBody)
             playerAnimator.SetBool("IsMoving", true);
+        else
+        {
+            playerAnimator.SetBool("IsMoving", false);
+        }
         Vector3 target = transform.position + vec.normalized;
         parent.position = Vector3.MoveTowards(transform.position, target, _motorSpeed * Time.deltaTime);
         parent.rotation = Quaternion.SlerpUnclamped(parent.rotation, Quaternion.LookRotation(vec, Vector3.up), _lookSpeed * Time.deltaTime);
@@ -65,5 +69,7 @@ public class PlayerMotor : MonoBehaviour
     public void SetPlayerPossessing(bool isPlayerPossessed)
     {
         _isInPlayerBody = isPlayerPossessed;
+        parent = transform.parent.transform;
     }
+
 }

@@ -48,7 +48,7 @@ public class PlayerInput : MonoBehaviour
         }
         else
         {
-            _motor.MovePlayer(Vector3.zero);
+            _motor.MovePlayer(Vector3.zero );
         }
         
     }
