@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     private PlayerState_Base _state;
 
     private bool _paused = false;
+    
 
     void Start()
     {
@@ -17,6 +19,7 @@ public class PlayerInput : MonoBehaviour
         _stats = GetComponent<PlayerStats>();
         _paused = false;
         CutsceneDialogueController.endDialogueAction += SetInputsOn;
+        CutsceneDialogueController.dialogueActive += SetInputsOff;
     }
 
     void Update()

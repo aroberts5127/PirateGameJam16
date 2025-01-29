@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
     [SerializeField] GameObject geometry;
     [SerializeField] GameObject indicator;
     [SerializeField] GameObject hitBox;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +25,10 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
 
     public override void PerformAction(PlayerStats stats)
     {
+        
         Debug.Log("Attacking");
         StartCoroutine(Attack(stats));
+        
         //stats.SubtractStaminaForAction(GetComponent<iDepossess>());
     }
 
@@ -73,7 +78,15 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
         yield return new WaitForSeconds(0.5f);
         stats.SubtractStaminaForAction(GetComponent<iDepossess>());
         hitBox.SetActive(false);
+        base.PerformAction(stats);
+    }
 
+    //This function will depossess the object when the number of actions necessary are performed.
+    //Does not require something like a successful hit, only that Perform Action is fired off.
+    public override void performActionsCompleted()
+    {
+        base.performActionsCompleted();
+        this.GetComponent<iDepossess>().depossess();
     }
 
 

@@ -19,12 +19,14 @@ public class CutsceneDialogueController : MonoBehaviour
     private Coroutine printRoutine;
     public static event Action<string, string> newDialogueAction;
     public static event Action endDialogueAction;
+    public static event Action dialogueActive;
 
 
 
     private void Start()
     {
         newDialogueAction += ProcessNewMonologue;
+        //PlayerInput.dialogueTriggeredPause += ProcessNewMonologue;
     }
 
     // Update is called once per frame
@@ -46,11 +48,13 @@ public class CutsceneDialogueController : MonoBehaviour
 
     private void ProcessNewMonologue(string speaker, string dialogue)
     {
+        dialogueActive?.Invoke();
         dialogueUIHolder.SetActive(true);
         characterNameTMP.text = speaker;
         currentDialogueText = dialogue;
         //Set Image for Speaker
         printRoutine = StartCoroutine(printDialogueRoutine(dialogue));
+        
     }
 
     private IEnumerator printDialogueRoutine(string dialogue)

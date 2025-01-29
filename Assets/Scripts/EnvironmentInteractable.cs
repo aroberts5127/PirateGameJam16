@@ -9,14 +9,15 @@ public class EnvironmentInteractable : MonoBehaviour, iInteractable
     private DialogueData data;
     public void Interact()
     {
-        
+        CutsceneDialogueController.TriggerMonologueAction(data);
+        //will need to figure out how to stop player from moving
     }
 
     public void Interact(PlayerState_Player interacter)
     {
         CutsceneDialogueController.TriggerMonologueAction(data);
         //Freeze Input for Player
-        interacter.StopMovementForPlayer();
+        //interacter.StopMovementForPlayer();
     }
 
     // Start is called before the first frame update

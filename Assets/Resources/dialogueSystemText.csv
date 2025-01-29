@@ -1,3 +1,7 @@
 ﻿eventID,speaker1,speaker2,text
 first_sign,protag,none,I have interacted with this sign. It says nothing important
 no_access,protag,none,I don’t need to go this way! there are more important things to do
+tutorial_step_1,protag,none,All in a good days work. I should go investigate what that noise was in the distance.
+should_farm,protag,none,I need to get back to the farm and do my chores - not wander off irresponsibly!
+tutorial_step_2,protag,priestess,Please Help Me! This bandit is attacking us. There's a sword there that I have no idea how to use. Maybe you can fend him off!
+tutorial_step_3,Protag,priestess,I had no Idea I could use things other than farm tools. That felt… weird

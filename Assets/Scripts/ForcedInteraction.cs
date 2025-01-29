@@ -33,4 +33,9 @@ public class ForcedInteraction : MonoBehaviour
             playerState = null;
         }
     }
+
+    public void TriggerInteractionFromStory()
+    {
+        interactableObj.Interact();
+    }
 }
