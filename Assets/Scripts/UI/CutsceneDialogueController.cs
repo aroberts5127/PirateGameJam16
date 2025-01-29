@@ -48,7 +48,7 @@ public class CutsceneDialogueController : MonoBehaviour
 
     private void ProcessNewMonologue(string speaker, string dialogue)
     {
-        dialogueActive?.Invoke();
+        
         dialogueUIHolder.SetActive(true);
         characterNameTMP.text = speaker;
         currentDialogueText = dialogue;
@@ -61,6 +61,7 @@ public class CutsceneDialogueController : MonoBehaviour
     {
         WaitForSeconds printWait = new WaitForSeconds(1/printSpeed);
         HowToCloseGO.SetActive(false);
+        dialogueActive?.Invoke();
         string curText = "";
         foreach(char c in dialogue)
         {
@@ -99,6 +100,7 @@ public class CutsceneDialogueController : MonoBehaviour
     public static void TriggerMonologueAction(DialogueData data)
     {
         newDialogueAction?.Invoke(data.speaker1, data.textBody);
+        dialogueActive?.Invoke();
     }
 
 }

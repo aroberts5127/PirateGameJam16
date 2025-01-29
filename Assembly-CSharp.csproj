@@ -73,7 +73,6 @@
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Tool.cs" />
     <Compile Include="Assets\Scripts\Interfaces\iDialogueProvider.cs" />
     <Compile Include="Assets\Scripts\UI\CutsceneDialogueController.cs" />
-    <Compile Include="Assets\Scripts\UI\LookAtCamera_WorldUI.cs" />
     <Compile Include="Assets\Scripts\DataObjects\DialogueData.cs" />
     <Compile Include="Assets\Scripts\Enemy\WaypointGroup.cs" />
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Weapon.cs" />
@@ -87,6 +86,7 @@
     <Compile Include="Assets\Scripts\ForcedInteraction.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Enemy\Waypoint.cs" />
+    <Compile Include="Assets\Scripts\UI\InteractPromptListener.cs" />
     <Compile Include="Assets\Scripts\UI\StaminaBar.cs" />
     <Compile Include="Assets\Scripts\DialogueDataProvider.cs" />
     <Compile Include="Assets\Scripts\Story\StoryTracker.cs" />

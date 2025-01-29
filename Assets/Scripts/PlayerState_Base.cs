@@ -12,6 +12,8 @@ public class PlayerState_Base : MonoBehaviour
     [SerializeField]
     protected Transform movementGO;
     public event Action<PlayerState_Base> performActionEvent;
+    [SerializeField]
+    protected string actionTextInfo;
 
 
     public virtual void PerformAction(PlayerStats stats)

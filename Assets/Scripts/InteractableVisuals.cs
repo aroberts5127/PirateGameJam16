@@ -9,6 +9,8 @@ public class InteractableVisuals : MonoBehaviour
     private GameObject interactPrompt;
     private iInteractable interactableParent;
     private PlayerState_Player playerState;
+    [SerializeField]
+    private string interactPromptText;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,8 @@ public class InteractableVisuals : MonoBehaviour
         if (other.GetComponent<PlayerState_Base>().PState == State.PLAYER)
         {
             playerState = other.GetComponent<PlayerState_Player>();
-            interactPrompt.SetActive(true);
+            InteractPromptListener.ActivatePromptAction(interactPromptText);
+            //interactPrompt.SetActive(true);
             playerState?.setInteractableTarget(interactableParent);
         }
     }
@@ -31,14 +34,21 @@ public class InteractableVisuals : MonoBehaviour
     {
         if (other.GetComponentInParent<PlayerState_Base>().PState == State.PLAYER)
         {
-            interactPrompt.SetActive(false);
+            //interactPrompt.SetActive(false);
+            InteractPromptListener.DeactivatePromptAction();
             playerState?.resetInteractableTarget();
             playerState = null;
         }
     }
 
+    public void EnablePromptAction(string actionInfo)
+    {
+        InteractPromptListener.ActivatePromptAction(actionInfo);
+    }
+
     public void DisableInteractPrompt()
     {
-        interactPrompt.SetActive(false);
+        InteractPromptListener.DeactivatePromptAction();
+        //interactPrompt.SetActive(false);
     }
 }

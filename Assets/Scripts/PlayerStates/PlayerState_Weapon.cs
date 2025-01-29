@@ -49,7 +49,7 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
         geometry.GetComponent<Animator>().enabled = true;
         geometry.GetComponent<Animator>().Play("Rise");
         this.GetComponent<BoxCollider>().enabled = false;
-        GetComponent<InteractableVisuals>().DisableInteractPrompt();
+        GetComponent<InteractableVisuals>().EnablePromptAction(actionTextInfo);
         origPlayerObject = interacter.gameObject;
         interacter.InvokePlayerInBody(false);
         indicator.SetActive(true);
@@ -65,19 +65,21 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
         geometry.GetComponent<Animator>().Play("Falling");
         //geometry.transform.position -= Vector3.up;
         this.GetComponent<BoxCollider>().enabled = true;
+        InteractPromptListener.DeactivatePromptAction();
         indicator.SetActive(false);
     }
 
 
     private IEnumerator Attack(PlayerStats stats)
     {
+        movementGO.GetComponent<PlayerInput>().SetInputsOff();
         geometry.GetComponent<Animator>().SetTrigger("AttackTrigger");
         yield return new WaitForSeconds(0.5f);
-        hitBox.SetActive(true);      
-        //Geometry.GetComponent<Animator>().Play("Attack");
+        hitBox.SetActive(true);          
         yield return new WaitForSeconds(0.5f);
         stats.SubtractStaminaForAction(GetComponent<iDepossess>());
         hitBox.SetActive(false);
+        movementGO.GetComponent<PlayerInput>().SetInputsOn();
         base.PerformAction(stats);
     }
 
