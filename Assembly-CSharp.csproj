@@ -63,30 +63,34 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyDetection.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyGraphicsParent.cs" />
     <Compile Include="Assets\Scripts\UI\CameraCutoutObject.cs" />
+    <Compile Include="Assets\Scripts\EnvironmentInteractable.cs" />
+    <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Player.cs" />
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\UI\HealthBar.cs" />
     <Compile Include="Assets\Scripts\PlayerState_Base.cs" />
+    <Compile Include="Assets\Scripts\WeaponDamageDetector.cs" />
     <Compile Include="Assets\Scripts\Story\StoryEvent_FirstToolUse.cs" />
     <Compile Include="Assets\Scripts\Story\StoryEvent.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\iInteractable.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
     <Compile Include="Assets\Scripts\Interfaces\iDeposses.cs" />
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Tool.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\iDialogueProvider.cs" />
-    <Compile Include="Assets\Scripts\UI\CutsceneDialogueController.cs" />
-    <Compile Include="Assets\Scripts\DataObjects\DialogueData.cs" />
-    <Compile Include="Assets\Scripts\Enemy\WaypointGroup.cs" />
-    <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Weapon.cs" />
-    <Compile Include="Assets\Scripts\InteractableVisuals.cs" />
-    <Compile Include="Assets\Scripts\EnvironmentInteractable.cs" />
-    <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Player.cs" />
-    <Compile Include="Assets\Scripts\UI\HealthBar.cs" />
-    <Compile Include="Assets\Scripts\WeaponDamageDetector.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\iInteractable.cs" />
     <Compile Include="Assets\Scripts\ForcedInteraction.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\iDialogueProvider.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\UI\CutsceneDialogueController.cs" />
+    <Compile Include="Assets\Scripts\Story\StoryInteractable.cs" />
+    <Compile Include="Assets\Scripts\DataObjects\DialogueData.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObject\PlayerDialogueScriptableObject.cs" />
+    <Compile Include="Assets\Scripts\Story\RenderFarm.cs" />
+    <Compile Include="Assets\Scripts\Enemy\WaypointGroup.cs" />
     <Compile Include="Assets\Scripts\Enemy\Waypoint.cs" />
+    <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Weapon.cs" />
+    <Compile Include="Assets\Scripts\PriestessFollowerMotor.cs" />
     <Compile Include="Assets\Scripts\UI\InteractPromptListener.cs" />
+    <Compile Include="Assets\Scripts\InteractableVisuals.cs" />
     <Compile Include="Assets\Scripts\UI\StaminaBar.cs" />
     <Compile Include="Assets\Scripts\DialogueDataProvider.cs" />
     <Compile Include="Assets\Scripts\Story\StoryTracker.cs" />
@@ -437,10 +441,6 @@
     </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
@@ -967,10 +967,6 @@
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
       <Private>False</Private>
@@ -983,32 +979,16 @@
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Timeline">
@@ -1017,10 +997,6 @@
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
@@ -1043,10 +1019,6 @@
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
       <Private>False</Private>
@@ -1063,20 +1035,16 @@
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

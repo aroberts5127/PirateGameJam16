@@ -35,6 +35,7 @@ public class StoryEvent : MonoBehaviour
 
     public virtual void ResolveStoryEvent()
     {
+
         Debug.Log("Resolving Story ID " + StoryEventID.ToString());
         if (objectsToEnable.Count > 0)
         {

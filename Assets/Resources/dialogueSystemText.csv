@@ -1,7 +1,20 @@
-﻿eventID,speaker1,speaker2,text
-first_sign,protag,none,I have interacted with this sign. It says nothing important
-no_access,protag,none,I don’t need to go this way! there are more important things to do
-tutorial_step_1,protag,none,All in a good days work. I should go investigate what that noise was in the distance.
-should_farm,protag,none,I need to get back to the farm and do my chores - not wander off irresponsibly!
-tutorial_step_2,protag,priestess,Please Help Me! This bandit is attacking us. There's a sword there that I have no idea how to use. Maybe you can fend him off!
-tutorial_step_3,Protag,priestess,I had no Idea I could use things other than farm tools. That felt… weird
+﻿eventID,speaker1,speaker2,text,nextEventId
+first_sign,0,-1,I have interacted with this sign. It says nothing important,
+no_access,0,-1,I don’t need to go this way! there are more important things to do,
+tutorial_step_1,0,-1,All in a good days work!,tutorial_step_1_1
+should_farm,0,-1,I need to get back to the farm and do my chores - not wander off irresponsibly!,
+tutorial_step_2,0,1,Please Help Me! This bandit is attacking us. There's a sword there that I have no idea how to use. Maybe you can fend him off!,tutorial_step_2_1
+tutorial_step_3_1,0,1,I had no Idea I could use things other than farm tools. That felt… weird,tutorial_step_3_2
+tutorial_step_1_1,-1,-1,CRASH!,tutorial_step_1_2
+tutorial_step_1_2,0,-1, I should go investigate what that noise was to the east,
+tutorial_step_3_2,1,0,Thank you so much for your help! We were ambushed on our way north. I don’t know what I'll do now,tutorial_step_3_3
+tutorial_step_3_3,0,1,Well… I may be able to help you get a little farther north. I did get all my crop preparation done earlier so I have some spare time,tutorial_step_3_4
+tutorial_step_3_4,1,0,OH! That would be wonderful! Especially seeing how capable you were. Thank you for your help,tutorial_step_3_5
+tutorial_step_3_5,0,-1,Capable she says. But I don't even know what that was.,
+too_early,0,-1,I need to go East to where the loud crash came from. I think I am too far north!,
+moving_ahead,1,0,Thank you for offering your help. The temple I am heading too isn't too far. You'll be there and back in no time at all.,moving_ahead_2
+moving_ahead_2,0,1,It's no problem at all. I'm happy to help.,
+tutorial_step_2_1,2,0,Haha and what do you think you're gonna do Farm Boy!,tutorial_step_2_2
+tutorial_step_2_2,0,2,Well… I'm involved now. Why don't you just leave and no one has to get hurt?,tutorial_step_2_3
+tutorial_step_2_3,2,0,I'm not worried about getting hurt at all! Just about getting paid for this job. Prepare yourself!,
+tutorial_step_3,2,0,AGGGHHHHH!,tutorial_step_3_1

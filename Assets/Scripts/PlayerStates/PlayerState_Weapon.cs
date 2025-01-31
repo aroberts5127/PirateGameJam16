@@ -18,11 +18,6 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
         indicator.SetActive(false);
     }
 
-    void Update()
-    {
-        
-    }
-
     public override void PerformAction(PlayerStats stats)
     {
         
@@ -87,7 +82,7 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
     //Does not require something like a successful hit, only that Perform Action is fired off.
     public override void performActionsCompleted()
     {
-        base.performActionsCompleted();
+        //base.performActionsCompleted();
         this.GetComponent<iDepossess>().depossess();
     }
 

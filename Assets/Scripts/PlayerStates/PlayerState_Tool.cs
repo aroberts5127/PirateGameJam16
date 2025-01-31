@@ -15,7 +15,7 @@ public class PlayerState_Tool : PlayerState_Base, iDepossess, iInteractable
 
     public override void PerformAction(PlayerStats stats)
     {
-        Debug.Log("Tool Interact Firing");
+        //Debug.Log("Tool Interact Firing");
         StartCoroutine(UseTool(stats));
     }
 
@@ -42,7 +42,7 @@ public class PlayerState_Tool : PlayerState_Base, iDepossess, iInteractable
 
    void iInteractable.Interact(PlayerState_Player interacter)
     {
-        Debug.Log("Possessing Tool");
+        //Debug.Log("Possessing Tool");
         //Need to Feedback and Take ownership of the PlayerInput Module;
         movementGO = interacter.GetMovementGO();
         movementGO.SetParent(this.gameObject.transform);
@@ -59,7 +59,7 @@ public class PlayerState_Tool : PlayerState_Base, iDepossess, iInteractable
 
     void iDepossess.depossess()
     {
-        Debug.Log("Deposessing");
+        //Debug.Log("Deposessing");
         movementGO.SetParent(origPlayerObject.transform);
         movementGO.transform.position = origPlayerObject.transform.position;
         origPlayerObject.GetComponent<PlayerState_Player>().InvokePlayerInBody(true);
@@ -73,7 +73,7 @@ public class PlayerState_Tool : PlayerState_Base, iDepossess, iInteractable
 
     public override void performActionsCompleted()
     {
-        base.performActionsCompleted();
+        //base.performActionsCompleted();
         this.GetComponent<iDepossess>().depossess();
     }
 

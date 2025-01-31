@@ -34,32 +34,41 @@ public class DialogueDataProvider : MonoBehaviour
 
             string line;
             DialogueData dialogueData;
+            dialogueData.eventId = "";
             dialogueData.textBody = "";
-            dialogueData.speaker1 = "";
-            dialogueData.speaker2 = "";
+            dialogueData.nextEventId = "";
+            dialogueData.speaker1 = -1;
+            dialogueData.speaker2 = -1;
             string dictKey = "";
             while ((line = reader.ReadLine()) != null)
             {
                 string[] values = line.Split(",");
                 for (int i = 0; i < values.Length; i++)
                 {
+                    
                     string key = headers[i];
+                    Debug.Log(i + " " + key);
                     string data = values[i];
                     if (key == "eventID")
                     {
                         dictKey = data;
+                        dialogueData.eventId = data;
                     }
                     if(key == "speaker1")
                     {
-                        dialogueData.speaker1 = data;
+                        dialogueData.speaker1 = int.Parse(data);
                     }
                     if(key == "speaker2")
                     {
-                        dialogueData.speaker2 = data;
+                        dialogueData.speaker2 = int.Parse(data);
                     }
                     if(key == "text")
                     {
                         dialogueData.textBody = data;
+                    }
+                    if(key == "nextEventId")
+                    {
+                        dialogueData.nextEventId = data;
                     }
                 }
                 //Debug.Log("KEY: " + dictKey + ", DATA: " + dialogueData.speaker1 + ", " + dialogueData.speaker2 + ", " + dialogueData.textBody);

@@ -7,6 +7,8 @@ public class PlayerState_Player : PlayerState_Base
 {
     private iInteractable interactableTarget;
     public static event Action<bool> PlayerInBody;
+    [SerializeField]
+    private Transform _followerTarget;
 
     void Start()
     {
@@ -48,6 +50,11 @@ public class PlayerState_Player : PlayerState_Base
     public void ForcePerformAction()
     {
         PerformAction(null);
+    }
+
+    public Transform GetFollowerTarget()
+    {
+        return _followerTarget;
     }
 
 }

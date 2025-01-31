@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public enum EnemyState { PATROL, HUNTING}
+public enum EnemyState {IDLE, PATROL, HUNTING}
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField]
@@ -23,21 +23,26 @@ public class EnemyMovement : MonoBehaviour
     private float attackTimer;
     private int targetID;
 
+    [SerializeField]
+    private Animator _animator;
+
     private void Start()
     {; 
-        currentState = EnemyState.PATROL;
+        currentState = waypointSet == null? EnemyState.IDLE : EnemyState.PATROL;
         agent = GetComponentInParent<NavMeshAgent>();
         targetID = 0;
-        _target = waypointSet.GetWaypoints()[targetID].transform;
-        agent.SetDestination(_target.position);
+        //_target = waypointSet.GetWaypoints()[targetID].transform;
+        //agent.SetDestination(_target.position);
         this.GetComponent<EnemyDetection>().playerSeenAction += StartHuntListener;
         
     }
 
     private void Update()
     {
+        _animator.SetBool("IsMoving", agent.velocity.magnitude > 0.0f);
         if (currentState == EnemyState.PATROL)
         {
+
             if (Vector3.Distance(agent.transform.position, _target.position) < 0.1f)
             {
                 //Debug.Log("Choosing New Target)");
@@ -68,21 +73,22 @@ public class EnemyMovement : MonoBehaviour
             return;
         this.GetComponent<EnemyDetection>().playerSeenAction -= StartHuntListener;
         this.GetComponent<EnemyDetection>().playerLostAction += PlayerLostListener;
-        currentState = EnemyState.HUNTING;
+        currentState = EnemyState.HUNTING; 
+        _animator.SetBool("IsRunning", true);
         //agent.isStopped = true;
         _playerTarget = player;
+
     }
 
     void PlayerLostListener()
     {
-        if (currentState == EnemyState.PATROL)
+        if (currentState != EnemyState.HUNTING)
             return;
         this.GetComponent<EnemyDetection>().playerLostAction -= PlayerLostListener;
         this.GetComponent<EnemyDetection>().playerSeenAction += StartHuntListener;
-        currentState = EnemyState.PATROL;
-        //agent.isStopped = false;
-        agent.SetDestination(_target.position);
+        currentState = waypointSet == null ? EnemyState.IDLE : EnemyState.PATROL;
         _playerTarget = null;
+        _animator.SetBool("IsRunning", false);
     }
 
 
@@ -90,6 +96,7 @@ public class EnemyMovement : MonoBehaviour
     {
         //Debug.Log("Hunting");
         agent.SetDestination(_playerTarget.position);
+        
     }
 
     private void Attack()

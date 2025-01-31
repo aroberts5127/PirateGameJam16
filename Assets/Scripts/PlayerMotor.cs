@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -34,12 +33,6 @@ public class PlayerMotor : MonoBehaviour
         PlayerState_Player.PlayerInBody += SetPlayerPossessing;
         _isInPlayerBody = true;
         parent = transform.parent.transform;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void MovePlayer(Vector3 vec)

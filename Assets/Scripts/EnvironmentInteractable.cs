@@ -22,13 +22,9 @@ public class EnvironmentInteractable : MonoBehaviour, iInteractable
 
     // Start is called before the first frame update
     void Start()
-    { 
-      data = DialogueDataProvider.Instance.RetrieveDialogueByEventID(dialogueID);  
+    {
+        if (dialogueID != string.Empty)
+            data = DialogueDataProvider.Instance.RetrieveDialogueByEventID(dialogueID);  
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
