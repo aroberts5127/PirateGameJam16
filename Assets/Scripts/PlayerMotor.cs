@@ -30,7 +30,7 @@ public class PlayerMotor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerState_Player.PlayerInBody += SetPlayerPossessing;
+        PlayerState_Player.Instance.PlayerInBody += SetPlayerPossessing;
         _isInPlayerBody = true;
         parent = transform.parent.transform;
     }

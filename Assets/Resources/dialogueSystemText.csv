@@ -18,3 +18,5 @@ tutorial_step_2_1,2,0,Haha and what do you think you're gonna do Farm Boy!,tutor
 tutorial_step_2_2,0,2,Well… I'm involved now. Why don't you just leave and no one has to get hurt?,tutorial_step_2_3
 tutorial_step_2_3,2,0,I'm not worried about getting hurt at all! Just about getting paid for this job. Prepare yourself!,
 tutorial_step_3,2,0,AGGGHHHHH!,tutorial_step_3_1
+first_instruction,0,-1,Another glorious day as the son of Demeter. Happy to be here taking care of my farm! I don't have much to do today. But I will need to use that Shovel over there to dig up the dirt some!,first_instruction_1
+first_instruction_1,0,-1,Welp… Better get to it!,

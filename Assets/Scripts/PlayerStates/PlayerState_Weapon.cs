@@ -21,7 +21,7 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
     public override void PerformAction(PlayerStats stats)
     {
         
-        Debug.Log("Attacking");
+        //Debug.Log("Attacking");
         StartCoroutine(Attack(stats));
         
         //stats.SubtractStaminaForAction(GetComponent<iDepossess>());

@@ -6,21 +6,28 @@ using UnityEngine;
 public class PlayerState_Player : PlayerState_Base
 {
     private iInteractable interactableTarget;
-    public static event Action<bool> PlayerInBody;
+    public event Action<bool> PlayerInBody;
     [SerializeField]
     private Transform _followerTarget;
+
+    public static PlayerState_Player Instance;
 
     void Start()
     {
         PState = State.PLAYER;
         origPlayerObject = this.gameObject;
+        if(Instance != null)
+        {
+            Destroy(this.gameObject);
+        }
+        Instance = this;
     }
 
     public override void PerformAction(PlayerStats stats)
     {
         if (interactableTarget == null)
         {
-            Debug.Log("Nothing to Interact With");
+            //Debug.Log("Nothing to Interact With");
             return;
         }
         interactableTarget.Interact(this);

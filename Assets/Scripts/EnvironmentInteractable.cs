@@ -13,7 +13,7 @@ public class EnvironmentInteractable : MonoBehaviour, iInteractable
         //will need to figure out how to stop player from moving
     }
 
-    public void Interact(PlayerState_Player interacter)
+    public virtual void Interact(PlayerState_Player interacter)
     {
         CutsceneDialogueController.TriggerMonologueAction(data);
         //Freeze Input for Player
@@ -21,7 +21,7 @@ public class EnvironmentInteractable : MonoBehaviour, iInteractable
     }
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         if (dialogueID != string.Empty)
             data = DialogueDataProvider.Instance.RetrieveDialogueByEventID(dialogueID);  

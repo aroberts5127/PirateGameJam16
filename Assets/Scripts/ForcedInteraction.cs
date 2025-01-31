@@ -15,10 +15,10 @@ public class ForcedInteraction : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger Entered");
+        //Debug.Log("Trigger Entered");
         if (other.GetComponent<PlayerState_Base>().PState == State.PLAYER)
         {
-            Debug.Log("Player");
+            //Debug.Log("Player");
             playerState = other.GetComponent<PlayerState_Player>();
             playerState?.setInteractableTarget(interactableObj);
             playerState.ForcePerformAction();

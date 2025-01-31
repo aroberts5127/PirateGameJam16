@@ -36,7 +36,7 @@ public class StoryEvent : MonoBehaviour
     public virtual void ResolveStoryEvent()
     {
 
-        Debug.Log("Resolving Story ID " + StoryEventID.ToString());
+        //Debug.Log("Resolving Story ID " + StoryEventID.ToString());
         if (objectsToEnable.Count > 0)
         {
             foreach (GameObject go in objectsToEnable)

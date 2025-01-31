@@ -47,7 +47,7 @@ public class DialogueDataProvider : MonoBehaviour
                 {
                     
                     string key = headers[i];
-                    Debug.Log(i + " " + key);
+                    
                     string data = values[i];
                     if (key == "eventID")
                     {
@@ -71,7 +71,7 @@ public class DialogueDataProvider : MonoBehaviour
                         dialogueData.nextEventId = data;
                     }
                 }
-                //Debug.Log("KEY: " + dictKey + ", DATA: " + dialogueData.speaker1 + ", " + dialogueData.speaker2 + ", " + dialogueData.textBody);
+                //Debug.Log("KEY: " + dictKey + ", DATA: " + dialogueData.speaker1 + ", " + dialogueData.speaker2 + ", " + dialogueData.textBody + ", " + dialogueData.nextEventId);
                 dialogueDataSet.Add(dictKey, dialogueData);
 
             }

@@ -81,7 +81,10 @@ public class CutsceneDialogueController : MonoBehaviour
         SetRenderTextureForCharacter(data.speaker1, speaker1Renderer);
         SetRenderTextureForCharacter(data.speaker2, speaker2Renderer);
         //Set Image for Speaker
-        printRoutine = StartCoroutine(printDialogueRoutine(currentDialogueText));       
+        Debug.Log(data.eventId);
+        Debug.Log(data.textBody);
+        Debug.Log(currentDialogueText);
+        printRoutine = StartCoroutine(printDialogueRoutine(currentDialogueText));
     }
 
     private IEnumerator printDialogueRoutine(string dialogue)
