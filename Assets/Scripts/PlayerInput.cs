@@ -64,4 +64,12 @@ public class PlayerInput : MonoBehaviour
     {
         _paused = false;
     }
+
+    public void OnDestroy()
+    {
+
+        CutsceneDialogueController.endDialogueAction -= SetInputsOn;
+        CutsceneDialogueController.dialogueActive -= SetInputsOff;
+
+    }
 }

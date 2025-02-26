@@ -65,4 +65,9 @@ public class PlayerMotor : MonoBehaviour
         parent = transform.parent.transform;
     }
 
+    private void OnDestroy()
+    {
+        PlayerState_Player.Instance.PlayerInBody -= SetPlayerPossessing;
+    }
+
 }

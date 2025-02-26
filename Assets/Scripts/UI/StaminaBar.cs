@@ -18,5 +18,12 @@ public class StaminaBar : MonoBehaviour
     {
         staminaBar.fillAmount = (float)curStamina / (float)maxStamina;
     }
-    
+
+    private void OnDestroy()
+    {
+
+        PlayerStats.PlayerStaminaAction -= StaminaListener;
+
+    }
+
 }

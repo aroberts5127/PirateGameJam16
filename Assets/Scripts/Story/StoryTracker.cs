@@ -17,7 +17,9 @@ public class StoryTracker : MonoBehaviour
             Destroy(this.gameObject);
         }
         Instance = this;
-        GameObject.DontDestroyOnLoad(this.gameObject);
+        //Commenting this out to make sure story doesn't break on subsequent loads.
+        //If converted to longer game, this Story Manager needs to be loaded into from some save file for curStoryIndex
+        //GameObject.DontDestroyOnLoad(this.gameObject);
         LoadStoryEvents();
         curStoryIndex = 1;
     }

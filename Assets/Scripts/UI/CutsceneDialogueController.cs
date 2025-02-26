@@ -75,6 +75,11 @@ public class CutsceneDialogueController : MonoBehaviour
             char1Name = " ";
         else
          char1Name = playerRenderInfo_so.CharacterList[data.speaker1].name;
+        if(dialogueUIHolder == null)
+        {
+            Debug.Log("WTF");
+            return;
+        }
         dialogueUIHolder.SetActive(true);
         characterNameTMP.text = char1Name;
         currentDialogueText = data.textBody;
@@ -160,6 +165,11 @@ public class CutsceneDialogueController : MonoBehaviour
     {
         newDialogueAction?.Invoke(data);
         dialogueActive?.Invoke();
+    }
+
+    public void OnDestroy()
+    {
+        newDialogueAction -= ProcessNewMonologue;
     }
 
 }

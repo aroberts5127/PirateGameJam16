@@ -9940,9 +9940,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 518901628}
-  - component: {fileID: 518901627}
-  - component: {fileID: 518901626}
-  - component: {fileID: 518901631}
   - component: {fileID: 518901625}
   - component: {fileID: 518901630}
   - component: {fileID: 518901629}
@@ -9974,38 +9971,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.35, y: 0.5, z: 1}
   m_Center: {x: -0.24, y: 0.3, z: 0}
---- !u!114 &518901626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518901624}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5ac6e8fc32ce3f459bf8c7dc449c8f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactPrompt: {fileID: 0}
-  interactPromptText: Pick Up
---- !u!114 &518901627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518901624}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e440a37baf68744ae8b9cc4a99c474, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PState: 2
-  movementGO: {fileID: 0}
-  actionTextInfo: Attack!
-  geometry: {fileID: 231067993}
-  indicator: {fileID: 471665181}
-  hitBox: {fileID: 1276599837}
 --- !u!4 &518901628
 Transform:
   m_ObjectHideFlags: 0
@@ -10071,26 +10036,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &518901631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518901624}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db99056c07b9e044e8166046059f94e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StoryEventID: 3
-  objectsToEnable:
-  - {fileID: 0}
-  objectsToDisable:
-  - {fileID: 1177600814}
-  - {fileID: 1871210279}
-  dialogueID: tutorial_step_3
-  playerStateActionsNeeded: 1
 --- !u!1001 &529608068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31983,9 +31928,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1911035595}
-  - component: {fileID: 1911035594}
-  - component: {fileID: 1911035593}
-  - component: {fileID: 1911035589}
   - component: {fileID: 1911035592}
   - component: {fileID: 1911035591}
   - component: {fileID: 1911035590}
@@ -31996,27 +31938,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1911035589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911035588}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db99056c07b9e044e8166046059f94e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StoryEventID: 1
-  objectsToEnable:
-  - {fileID: 1135523965}
-  - {fileID: 518901624}
-  - {fileID: 1871210279}
-  objectsToDisable:
-  - {fileID: 1435346172}
-  dialogueID: tutorial_step_1
-  playerStateActionsNeeded: 3
 --- !u!54 &1911035590
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32086,36 +32007,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.1751328, y: 0.5, z: 4.3729734}
   m_Center: {x: -0.054767374, y: 0.3, z: -0.09509659}
---- !u!114 &1911035593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911035588}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5ac6e8fc32ce3f459bf8c7dc449c8f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactPrompt: {fileID: 0}
-  interactPromptText: Pick Up
---- !u!114 &1911035594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911035588}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6012470a85f524d40a9ded31314b18bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PState: 1
-  movementGO: {fileID: 0}
-  actionTextInfo: Dig
-  geometry: {fileID: 1667073928}
 --- !u!4 &1911035595
 Transform:
   m_ObjectHideFlags: 0

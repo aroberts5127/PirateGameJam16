@@ -22920,9 +22920,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1296960942}
-  - component: {fileID: 1296960944}
   - component: {fileID: 1296960943}
-  - component: {fileID: 1296960945}
   m_Layer: 7
   m_Name: PlayerMovement
   m_TagString: Player
@@ -22963,35 +22961,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerAnimator: {fileID: 1858929641}
---- !u!114 &1296960944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296960941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1b43901803a3b24981b2be66cdd724d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1296960945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296960941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e870faad4ad93943a40db6b5635bdf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentStamina: 0
-  maxStamina: 5
-  staminaRechargeRate: 4
-  currentHealth: 0
-  maxHealth: 3
 --- !u!1001 &1297058781
 PrefabInstance:
   m_ObjectHideFlags: 0

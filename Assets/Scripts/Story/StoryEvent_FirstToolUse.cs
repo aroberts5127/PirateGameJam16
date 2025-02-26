@@ -24,5 +24,10 @@ public class StoryEvent_FirstToolUse : StoryEvent
             StoryTracker.Instance.TriggerStoryEvent(StoryEventID);
             playerState.performActionEvent -= PlayerStateActionListener;
         }
-    } 
+    }
+
+    private void OnDestroy()
+    {
+        playerState.performActionEvent -= PlayerStateActionListener;
+    }
 }

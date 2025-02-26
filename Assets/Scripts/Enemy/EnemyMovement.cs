@@ -104,5 +104,10 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        this.GetComponent<EnemyDetection>().playerLostAction -= PlayerLostListener;
+        this.GetComponent<EnemyDetection>().playerSeenAction -= StartHuntListener;
+    }
 
 }

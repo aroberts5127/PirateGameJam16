@@ -601,8 +601,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 286.9, y: -97.5}
-  m_SizeDelta: {x: 190, y: 19}
+  m_AnchoredPosition: {x: 286.5, y: -97.5}
+  m_SizeDelta: {x: 190, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &21639934
 MonoBehaviour:
@@ -3114,7 +3114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 170337847}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7364,6 +7364,10 @@ PrefabInstance:
       value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 3402615396659339884, guid: 44309589b3d33da438839c6fefb949eb, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402615396659339884, guid: 44309589b3d33da438839c6fefb949eb, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -7422,6 +7426,10 @@ PrefabInstance:
     - target: {fileID: 8607712020567914591, guid: 44309589b3d33da438839c6fefb949eb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952994253709976293, guid: 44309589b3d33da438839c6fefb949eb, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5763975981310009680, guid: 44309589b3d33da438839c6fefb949eb, type: 3}
@@ -8233,6 +8241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: 1623439359}
+  _animator: {fileID: 1147638787}
 --- !u!1001 &438368238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9007,7 +9016,7 @@ GameObject:
   - component: {fileID: 471665182}
   - component: {fileID: 471665184}
   - component: {fileID: 471665183}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: positionIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10584,7 +10593,7 @@ GameObject:
   - component: {fileID: 518901625}
   - component: {fileID: 518901630}
   - component: {fileID: 518901629}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SwordGameObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16572,7 +16581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 838170356}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17085,9 +17094,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: c3aea82986161e849a95499115355495, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c3aea82986161e849a95499115355495, type: 3}
       propertyPath: m_Name
       value: Sword_v_004
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c3aea82986161e849a95499115355495, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905609870639353253, guid: c3aea82986161e849a95499115355495, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: c3aea82986161e849a95499115355495, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719771546195959716, guid: c3aea82986161e849a95499115355495, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19926,7 +19955,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028880437}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27054918, y: -0.000000023426008, z: 0.000000006583408, w: 0.9627062}
+  m_LocalRotation: {x: 0.27054918, y: 0.000000023426011, z: -0.000000006583409, w: 0.9627062}
   m_LocalPosition: {x: -11.215129, y: 5.89, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -24601,7 +24630,7 @@ GameObject:
   - component: {fileID: 1276599840}
   - component: {fileID: 1276599839}
   - component: {fileID: 1276599842}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27299,7 +27328,7 @@ Rigidbody:
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1152
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 67
@@ -27749,9 +27778,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4258411891960909470, guid: 9d0e692cb84607e4d94ed5cbb8d3ac49, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 9d0e692cb84607e4d94ed5cbb8d3ac49, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d0e692cb84607e4d94ed5cbb8d3ac49, type: 3}
       propertyPath: m_Name
       value: Shovel_v02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d0e692cb84607e4d94ed5cbb8d3ac49, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5432273140038064630, guid: 9d0e692cb84607e4d94ed5cbb8d3ac49, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179158139332175658, guid: 9d0e692cb84607e4d94ed5cbb8d3ac49, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28078,7 +28127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488014328}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27054918, y: -0.000000023426008, z: 0.000000006583408, w: 0.9627062}
+  m_LocalRotation: {x: 0.27054918, y: 0.000000023426011, z: -0.000000006583409, w: 0.9627062}
   m_LocalPosition: {x: -11.215129, y: 5.89, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -35501,7 +35550,7 @@ GameObject:
   - component: {fileID: 1911035592}
   - component: {fileID: 1911035591}
   - component: {fileID: 1911035590}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShovelGameObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39700,6 +39749,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 3402615396659339884, guid: 44309589b3d33da438839c6fefb949eb, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3442862321161508823, guid: 44309589b3d33da438839c6fefb949eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.06
@@ -39739,6 +39792,10 @@ PrefabInstance:
     - target: {fileID: 3442862321161508823, guid: 44309589b3d33da438839c6fefb949eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952994253709976293, guid: 44309589b3d33da438839c6fefb949eb, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5763975981310009680, guid: 44309589b3d33da438839c6fefb949eb, type: 3}

@@ -19,7 +19,7 @@ public class InteractPromptListener : MonoBehaviour
         activateInteractPromptAction += ActivateInteractPrompt;
         deactivateInteractPromptAction += DeactivateInteractPrompt;
 
-        activateInteractPromptAction?.Invoke(string.Empty);
+        //activateInteractPromptAction?.Invoke(string.Empty);
     }
 
     public static void ActivatePromptAction(string prompt)
@@ -43,5 +43,12 @@ public class InteractPromptListener : MonoBehaviour
     private void DeactivateInteractPrompt()
     {
         _interactPrompt.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("I Did this");
+        activateInteractPromptAction -= ActivateInteractPrompt;
+        deactivateInteractPromptAction -= DeactivateInteractPrompt;
     }
 }

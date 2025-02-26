@@ -22,4 +22,9 @@ public class HealthBar : MonoBehaviour
             healthBarImg.fillAmount = (float)curHealth / (float)maxHealth;
         }
     }
+
+    private void OnDestroy()
+    {
+        PlayerStats.PlayerHealthAction -= HealthListener;
+    }
 }
