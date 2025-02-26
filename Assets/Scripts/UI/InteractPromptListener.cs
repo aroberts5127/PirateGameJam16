@@ -7,11 +7,13 @@ using UnityEngine;
 public class InteractPromptListener : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _interactPrompt;
+    private GameObject _interactPromptContainer;
+    //[SerializeField]
+    //private TextMeshProUGUI _interactText;
     [SerializeField]
-    private TextMeshProUGUI _interactText;
+    private GameObject promptPrefab;
 
-    public static event Action<string> activateInteractPromptAction;
+    public static event Action<PromptInfo[]> activateInteractPromptAction;
     public static event Action deactivateInteractPromptAction;
 
     private void Start()
@@ -22,9 +24,9 @@ public class InteractPromptListener : MonoBehaviour
         //activateInteractPromptAction?.Invoke(string.Empty);
     }
 
-    public static void ActivatePromptAction(string prompt)
+    public static void ActivatePromptAction(PromptInfo[] prompts)
     {
-        activateInteractPromptAction?.Invoke(prompt);
+        activateInteractPromptAction?.Invoke(prompts);
     }
 
     public static void DeactivatePromptAction()
@@ -34,15 +36,31 @@ public class InteractPromptListener : MonoBehaviour
 
 
 
-    private void ActivateInteractPrompt(string textInfo = "Interact")
+    private void ActivateInteractPrompt2(string textInfo = "Interact")
     {
-        _interactText.text = textInfo;
-        _interactPrompt.SetActive(true);
+        //_interactText.text = textInfo;
+        //_interactPrompt.SetActive(true);
+    }
+
+    private void ActivateInteractPrompt(PromptInfo[] prompts)
+    {
+        //_interactText.text = textInfo;
+        foreach (PromptInfo prompt in prompts)
+        {
+            GameObject go = Instantiate(promptPrefab, _interactPromptContainer.transform);
+            go.GetComponent<InteractPromptObject>().SetData(prompt);
+        }
+        _interactPromptContainer.SetActive(true);
     }
 
     private void DeactivateInteractPrompt()
     {
-        _interactPrompt.SetActive(false);
+        _interactPromptContainer.SetActive(false);
+        foreach(Transform t in _interactPromptContainer.transform)
+        {
+            Destroy(t.gameObject);
+            //This should be replaced later with Object Pooling
+        }
     }
 
     private void OnDestroy()
@@ -51,4 +69,12 @@ public class InteractPromptListener : MonoBehaviour
         activateInteractPromptAction -= ActivateInteractPrompt;
         deactivateInteractPromptAction -= DeactivateInteractPrompt;
     }
+}
+
+
+[Serializable]
+public struct PromptInfo
+{
+    public string textInfo;
+    public int promptImageId;
 }

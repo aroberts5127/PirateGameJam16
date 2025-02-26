@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemy\EnemyDetection.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObject\InteractPromptDataScriptableObject.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyGraphicsParent.cs" />
     <Compile Include="Assets\Scripts\UI\CameraCutoutObject.cs" />
     <Compile Include="Assets\Scripts\EnvironmentInteractable.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Interfaces\iInteractable.cs" />
+    <Compile Include="Assets\Scripts\UI\InteractPromptObject.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
     <Compile Include="Assets\Scripts\Story\EndGameInteraction.cs" />
     <Compile Include="Assets\Scripts\Interfaces\iDeposses.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Assets\Scripts\Enemy\Waypoint.cs" />
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Weapon.cs" />
     <Compile Include="Assets\Scripts\PriestessFollowerMotor.cs" />
+    <Compile Include="Assets\Scripts\UI\InteractPromptSpriteLoader.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\UI\InteractPromptListener.cs" />
     <Compile Include="Assets\Scripts\InteractableVisuals.cs" />

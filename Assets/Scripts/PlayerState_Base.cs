@@ -13,7 +13,7 @@ public class PlayerState_Base : MonoBehaviour
     protected Transform movementGO;
     public event Action<PlayerState_Base> performActionEvent;
     [SerializeField]
-    protected string actionTextInfo;
+    protected PromptInfo[] actionPrompts;
 
 
     public virtual void PerformAction(PlayerStats stats)

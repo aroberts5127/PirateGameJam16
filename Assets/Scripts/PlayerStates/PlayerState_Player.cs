@@ -21,6 +21,10 @@ public class PlayerState_Player : PlayerState_Base
             Destroy(this.gameObject);
         }
         Instance = this;
+        //This doesn't work. Need to figure out a better way to show the prompts when in player form.
+        //Or Create a better handling of the list of available actions at any time.
+        //Side note- visual presentation of it sucks too.
+        //InteractPromptListener.ActivatePromptAction(actionPrompts);
     }
 
     public override void PerformAction(PlayerStats stats)
@@ -42,6 +46,7 @@ public class PlayerState_Player : PlayerState_Base
     public void resetInteractableTarget()
     {
         interactableTarget = null;
+        InteractPromptListener.ActivatePromptAction(actionPrompts);
     }
 
     public void InvokePlayerInBody(bool inBody)

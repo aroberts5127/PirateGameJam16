@@ -44,7 +44,7 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
         geometry.GetComponent<Animator>().enabled = true;
         geometry.GetComponent<Animator>().Play("Rise");
         this.GetComponent<BoxCollider>().enabled = false;
-        GetComponent<InteractableVisuals>().EnablePromptAction(actionTextInfo);
+        GetComponent<InteractableVisuals>().EnablePromptAction(actionPrompts);
         origPlayerObject = interacter.gameObject;
         interacter.InvokePlayerInBody(false);
         indicator.SetActive(true);

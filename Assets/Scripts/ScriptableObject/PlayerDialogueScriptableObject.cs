@@ -8,11 +8,6 @@ using UnityEngine;
 public class PlayerDialogueScriptableObject : ScriptableObject
 {
     public List<CharacterDialogueRenderStruct> CharacterList;
-
-    public List<CharacterDialogueRenderStruct> GetRenderStruct()
-    {
-        return CharacterList;
-    }
 }
 
 [Serializable]
