@@ -16,6 +16,8 @@ public class InteractPromptListener : MonoBehaviour
     public static event Action<PromptInfo[]> activateInteractPromptAction;
     public static event Action deactivateInteractPromptAction;
 
+    private Dictionary<int, PromptInfo> activePromptsDict = new Dictionary<int, PromptInfo>();
+
     private void Start()
     {
         activateInteractPromptAction += ActivateInteractPrompt;
@@ -45,11 +47,21 @@ public class InteractPromptListener : MonoBehaviour
     private void ActivateInteractPrompt(PromptInfo[] prompts)
     {
         //_interactText.text = textInfo;
+        foreach (Transform t in _interactPromptContainer.transform)
+        {
+            Destroy(t.gameObject);
+        }
         foreach (PromptInfo prompt in prompts)
         {
-            GameObject go = Instantiate(promptPrefab, _interactPromptContainer.transform);
-            go.GetComponent<InteractPromptObject>().SetData(prompt);
+            activePromptsDict.TryAdd(prompt.promptImageId, prompt);
         }
+        foreach (int id in activePromptsDict.Keys)
+        {
+            //Debug.Log(id);
+            GameObject go = Instantiate(promptPrefab, _interactPromptContainer.transform);
+            go.GetComponent<InteractPromptObject>().SetData(activePromptsDict[id]);
+        }
+        
         _interactPromptContainer.SetActive(true);
     }
 
@@ -59,13 +71,13 @@ public class InteractPromptListener : MonoBehaviour
         foreach(Transform t in _interactPromptContainer.transform)
         {
             Destroy(t.gameObject);
-            //This should be replaced later with Object Pooling
         }
+        activePromptsDict.Clear();
     }
 
     private void OnDestroy()
     {
-        Debug.Log("I Did this");
+        //Debug.Log("I Did this");
         activateInteractPromptAction -= ActivateInteractPrompt;
         deactivateInteractPromptAction -= DeactivateInteractPrompt;
     }

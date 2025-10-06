@@ -23,6 +23,10 @@ public class CameraCutoutObject : MonoBehaviour
     {
         mainCamera = GetComponent<Camera>();
         allHistObjects = new List<GameObject>();
+        if(targetObject == null)
+        {
+            targetObject = GameObject.Find("PlayerMovement").GetComponent<Transform>();
+        }
     }
 
     // Update is called once per frame

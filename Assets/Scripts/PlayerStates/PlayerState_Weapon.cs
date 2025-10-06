@@ -46,7 +46,7 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
         this.GetComponent<BoxCollider>().enabled = false;
         GetComponent<InteractableVisuals>().EnablePromptAction(actionPrompts);
         origPlayerObject = interacter.gameObject;
-        interacter.InvokePlayerInBody(false);
+        interacter.InvokePlayerInBody(false, this);
         indicator.SetActive(true);
     }
 
@@ -55,7 +55,7 @@ public class PlayerState_Weapon : PlayerState_Base, iDepossess, iInteractable
         //Debug.Log("Weapon Depossess Called");
         movementGO.SetParent(origPlayerObject.transform);
         movementGO.transform.position = origPlayerObject.transform.position;
-        origPlayerObject.GetComponent<PlayerState_Player>().InvokePlayerInBody(true);
+        origPlayerObject.GetComponent<PlayerState_Player>().InvokePlayerInBody(true, origPlayerObject.GetComponent<PlayerState_Base>());
         //geometry.GetComponent<BoxCollider>().enabled = false;
         geometry.GetComponent<Animator>().Play("Falling");
         //geometry.transform.position -= Vector3.up;

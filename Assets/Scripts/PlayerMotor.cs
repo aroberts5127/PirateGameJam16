@@ -26,11 +26,12 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField]
     Animator playerAnimator;
     private bool _isInPlayerBody;
+    [SerializeField]
     private Transform parent;
     // Start is called before the first frame update
     void Start()
     {
-        PlayerState_Player.Instance.PlayerInBody += SetPlayerPossessing;
+        PlayerState_Player.PlayerInBody += SetPlayerPossessing;
         _isInPlayerBody = true;
         parent = transform.parent.transform;
     }
@@ -59,15 +60,17 @@ public class PlayerMotor : MonoBehaviour
         playerAnimator.SetBool("IsRunning",isSprinting);
     }
 
-    public void SetPlayerPossessing(bool isPlayerPossessed)
+    public void SetPlayerPossessing(bool isPlayerPossessed, PlayerState_Base ps)
     {
+        Debug.Log("Here Possessing");
         _isInPlayerBody = isPlayerPossessed;
-        parent = transform.parent.transform;
+        parent = ps.transform;
+        Debug.Log(parent);
     }
 
     private void OnDestroy()
     {
-        PlayerState_Player.Instance.PlayerInBody -= SetPlayerPossessing;
+        PlayerState_Player.PlayerInBody -= SetPlayerPossessing;
     }
 
 }

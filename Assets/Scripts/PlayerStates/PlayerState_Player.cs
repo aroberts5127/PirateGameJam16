@@ -6,26 +6,17 @@ using UnityEngine;
 public class PlayerState_Player : PlayerState_Base
 {
     private iInteractable interactableTarget;
-    public event Action<bool> PlayerInBody;
+    public static event Action<bool, PlayerState_Base> PlayerInBody;
     [SerializeField]
     private Transform _followerTarget;
-
-    public static PlayerState_Player Instance;
 
     void Start()
     {
         PState = State.PLAYER;
         origPlayerObject = this.gameObject;
-        if(Instance != null)
-        {
-            Destroy(this.gameObject);
-        }
-        Instance = this;
-        //This doesn't work. Need to figure out a better way to show the prompts when in player form.
-        //Or Create a better handling of the list of available actions at any time.
-        //Side note- visual presentation of it sucks too.
-        //InteractPromptListener.ActivatePromptAction(actionPrompts);
+        CutsceneDialogueController.endDialogueAction += ActivatePromptViaTextEnd;
     }
+
 
     public override void PerformAction(PlayerStats stats)
     {
@@ -49,9 +40,10 @@ public class PlayerState_Player : PlayerState_Base
         InteractPromptListener.ActivatePromptAction(actionPrompts);
     }
 
-    public void InvokePlayerInBody(bool inBody)
+    public void InvokePlayerInBody(bool inBody, PlayerState_Base ps)
     {
-        PlayerInBody?.Invoke(inBody);
+        Debug.Log("Here Invoking");
+        PlayerInBody?.Invoke(inBody, ps);
     }
 
     public void StopMovementForPlayer()
@@ -67,6 +59,11 @@ public class PlayerState_Player : PlayerState_Base
     public Transform GetFollowerTarget()
     {
         return _followerTarget;
+    }
+
+    private void ActivatePromptViaTextEnd()
+    {
+        InteractPromptListener.ActivatePromptAction(actionPrompts);
     }
 
 }

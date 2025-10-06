@@ -18,7 +18,7 @@ MonoBehaviour:
     promptImage: {fileID: 21300000, guid: caab2d65599d2e04399637e184f17c1f, type: 3}
   - id: 1
     name: Q Key
-    promptImage: {fileID: 21300000, guid: caab2d65599d2e04399637e184f17c1f, type: 3}
+    promptImage: {fileID: 21300000, guid: 9b4d04494a8fcbd4a826b4320772a5be, type: 3}
   - id: 2
     name: Shift Key
-    promptImage: {fileID: 21300000, guid: caab2d65599d2e04399637e184f17c1f, type: 3}
+    promptImage: {fileID: 21300000, guid: affab0d1ce5a82045ac84c71f601eb7c, type: 3}

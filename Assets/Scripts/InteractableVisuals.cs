@@ -21,8 +21,8 @@ public class InteractableVisuals : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(this.gameObject.name);
-        Debug.Log(other.gameObject.name);
+        //Debug.Log(this.gameObject.name);
+        //Debug.Log(other.gameObject.name);
         if (other.GetComponent<PlayerState_Base>().PState == State.PLAYER)
         {        
             playerState = other.GetComponent<PlayerState_Player>();

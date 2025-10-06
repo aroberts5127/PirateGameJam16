@@ -47,14 +47,12 @@ public class PlayerState_Tool : PlayerState_Base, iDepossess, iInteractable
         movementGO = interacter.GetMovementGO();
         movementGO.SetParent(this.gameObject.transform);
         movementGO.transform.position = this.transform.position;
-        //movementGO.GetComponent<PlayerMotor>().SetAnimator(geometry.GetComponent<Animator>());
         geometry.GetComponent<Animator>().enabled = true;
         geometry.GetComponent<Animator>().Play("Rise");
         this.GetComponent<BoxCollider>().enabled = false;
         GetComponent<InteractableVisuals>().EnablePromptAction(actionPrompts);
         origPlayerObject = interacter.gameObject;
-        interacter.InvokePlayerInBody(false);
-        //indicator.SetActive(true);
+        interacter.InvokePlayerInBody(false, this);
     }
 
     void iDepossess.depossess()
@@ -62,7 +60,7 @@ public class PlayerState_Tool : PlayerState_Base, iDepossess, iInteractable
         //Debug.Log("Deposessing");
         movementGO.SetParent(origPlayerObject.transform);
         movementGO.transform.position = origPlayerObject.transform.position;
-        origPlayerObject.GetComponent<PlayerState_Player>().InvokePlayerInBody(true);
+        origPlayerObject.GetComponent<PlayerState_Player>().InvokePlayerInBody(true, origPlayerObject.GetComponent<PlayerState_Base>());
         //geometry.GetComponent<BoxCollider>().enabled = false;
         geometry.GetComponent<Animator>().Play("Falling");
         //geometry.transform.position -= Vector3.up;

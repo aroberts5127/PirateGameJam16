@@ -8,8 +8,14 @@ public class PriestessFollowerMotor : MonoBehaviour
     [SerializeField]
     private NavMeshAgent _agent;
     private PlayerState_Player player;
+    private Transform _target;
     [SerializeField]
     private Animator _animator;
+
+    [SerializeField]
+    private float _walkSpeed;
+    [SerializeField]
+    private float _sprintSpeed;
 
     private bool _isSprinting;
     // Start is called before the first frame update
@@ -26,7 +32,10 @@ public class PriestessFollowerMotor : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log("Player Bad: " + player.gameObject.name);
+        //Debug.Log("Target Bad: " + player.GetFollowerTarget() == null);
         _agent.SetDestination(player.GetFollowerTarget().position);
+        _agent.speed = _isSprinting ? _sprintSpeed : _walkSpeed;
         _animator.SetFloat("isRunning", _agent.velocity.magnitude);
         _animator.SetBool("isSprinting", _isSprinting);
     }
