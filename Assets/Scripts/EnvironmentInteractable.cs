@@ -6,7 +6,7 @@ public class EnvironmentInteractable : MonoBehaviour, iInteractable
 {
     [SerializeField]
     private string dialogueID;
-    private DialogueData data;
+    protected DialogueData data;
     public void Interact()
     {
         CutsceneDialogueController.TriggerMonologueAction(data);

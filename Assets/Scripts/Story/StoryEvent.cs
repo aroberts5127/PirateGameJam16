@@ -15,12 +15,19 @@ public class StoryEvent : MonoBehaviour
     [SerializeField]
     protected string dialogueID;
     protected DialogueData data;
+    protected ObjectiveData oData;
 
     public virtual void Start()
     {
         if (dialogueID != string.Empty)
         {
             data = DialogueDataProvider.Instance.RetrieveDialogueByEventID(dialogueID);
+            if (data.objectiveId != string.Empty)
+            {
+                //Debug.Log(data.objectiveId);
+                oData = ObjectiveDataProvider.Instance.RetrieveObjectiveByEventID(data.objectiveId);
+                //Debug.Log(oData.objectiveID);
+            }
             //Debug.Log("Data: " + data.textBody);
         }
 
@@ -55,6 +62,11 @@ public class StoryEvent : MonoBehaviour
         {
             CutsceneDialogueController.TriggerMonologueAction(data);
         }
+        if (oData.objectiveID != string.Empty)
+        {
+            CurrentObjectiveModuleDataHandler.ResolveObjectiveTrigger();
+        }
+        
         this.enabled = false;
     }
 }

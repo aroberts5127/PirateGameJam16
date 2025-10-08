@@ -56,12 +56,10 @@ public class CutsceneDialogueController : MonoBehaviour
         {
             if(printRoutine != null)
             {
-                //Debug.Log("Skipping");
                 SkipDialogue();
             }
             else
             {
-                //Debug.Log("Accepting Input");
                 progressDialogue();
             }
         }
@@ -85,10 +83,6 @@ public class CutsceneDialogueController : MonoBehaviour
         currentDialogueText = data.textBody;
         SetRenderTextureForCharacter(data.speaker1, speaker1Renderer);
         SetRenderTextureForCharacter(data.speaker2, speaker2Renderer);
-        //Set Image for Speaker
-        //Debug.Log(data.eventId);
-        //Debug.Log(data.textBody);
-        //Debug.Log(currentDialogueText);
         printRoutine = StartCoroutine(printDialogueRoutine(currentDialogueText));
     }
 
@@ -114,7 +108,6 @@ public class CutsceneDialogueController : MonoBehaviour
             
         }
         printRoutine = null;
-        //Need to Handle Closing it now
         HowToCloseGO.SetActive(true);
     }
 
@@ -143,9 +136,14 @@ public class CutsceneDialogueController : MonoBehaviour
     {
         if (currentData.eventId == String.Empty)
         {
-            //Debug.Log("Stuck in the void!");
             return;
         }
+        if (currentData.objectiveId != string.Empty)
+        {
+            ObjectiveData oData = ObjectiveDataProvider.Instance.RetrieveObjectiveByEventID(currentData.objectiveId);
+            CurrentObjectiveModuleDataHandler.SendNewObjective(oData);
+        }
+
         if (currentData.nextEventId == string.Empty)
         {
             renderFarm.DeactivateAllRenderFarms();
@@ -155,7 +153,6 @@ public class CutsceneDialogueController : MonoBehaviour
         }
         else
         {
-            //Debug.Log("here");
             if (currentData.nextEventId != string.Empty)
                 ProcessNewMonologue(DialogueDataProvider.Instance.RetrieveDialogueByEventID(currentData.nextEventId));
         }

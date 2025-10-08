@@ -48,6 +48,11 @@ public class PlayerInput : MonoBehaviour
                 }
 
             }
+
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                CurrentObjectiveModuleVisuals.CurrentObjectiveTrigger();
+            }
         }
         else
         {

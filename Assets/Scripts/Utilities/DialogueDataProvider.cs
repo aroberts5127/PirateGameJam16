@@ -39,6 +39,7 @@ public class DialogueDataProvider : MonoBehaviour
             dialogueData.nextEventId = "";
             dialogueData.speaker1 = -1;
             dialogueData.speaker2 = -1;
+            dialogueData.objectiveId = "";
             string dictKey = "";
             while ((line = reader.ReadLine()) != null)
             {
@@ -69,6 +70,10 @@ public class DialogueDataProvider : MonoBehaviour
                     if(key == "nextEventId")
                     {
                         dialogueData.nextEventId = data;
+                    }
+                    if (key == "objectiveId")
+                    {
+                        dialogueData.objectiveId = data;
                     }
                 }
                 //Debug.Log("KEY: " + dictKey + ", DATA: " + dialogueData.speaker1 + ", " + dialogueData.speaker2 + ", " + dialogueData.textBody + ", " + dialogueData.nextEventId);

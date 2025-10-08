@@ -17,6 +17,7 @@ public class EndGameInteraction : EnvironmentInteractable
         base.Interact(interacter);
         this.GetComponent<BoxCollider>().enabled = false;
         StartCoroutine(WaitToChangeScene());
+        CurrentObjectiveModuleDataHandler.ResolveObjectiveTrigger();
     }
 
     private IEnumerator WaitToChangeScene()

@@ -42,7 +42,6 @@ public class PlayerState_Player : PlayerState_Base
 
     public void InvokePlayerInBody(bool inBody, PlayerState_Base ps)
     {
-        Debug.Log("Here Invoking");
         PlayerInBody?.Invoke(inBody, ps);
     }
 

@@ -18,6 +18,7 @@ public class StoryEvent_FirstToolUse : StoryEvent
     private void PlayerStateActionListener(PlayerState_Base ps)
     {
         playerStateActionsPerformed++;
+        CurrentObjectiveModuleDataHandler.SendObjectiveUpdate();
         if(playerStateActionsPerformed >= playerStateActionsNeeded)
         {
             ps.performActionsCompleted();

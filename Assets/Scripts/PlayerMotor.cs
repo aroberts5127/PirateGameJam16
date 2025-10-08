@@ -62,10 +62,10 @@ public class PlayerMotor : MonoBehaviour
 
     public void SetPlayerPossessing(bool isPlayerPossessed, PlayerState_Base ps)
     {
-        Debug.Log("Here Possessing");
+        //Debug.Log("Here Possessing");
         _isInPlayerBody = isPlayerPossessed;
         parent = ps.transform;
-        Debug.Log(parent);
+        //Debug.Log(parent);
     }
 
     private void OnDestroy()

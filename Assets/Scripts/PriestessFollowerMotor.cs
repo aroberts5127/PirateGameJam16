@@ -32,8 +32,6 @@ public class PriestessFollowerMotor : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log("Player Bad: " + player.gameObject.name);
-        //Debug.Log("Target Bad: " + player.GetFollowerTarget() == null);
         _agent.SetDestination(player.GetFollowerTarget().position);
         _agent.speed = _isSprinting ? _sprintSpeed : _walkSpeed;
         _animator.SetFloat("isRunning", _agent.velocity.magnitude);

@@ -60,11 +60,14 @@
     <Analyzer Include="D:\Unity\2022.3.14f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\UI\Objectives\ObjectiveModule.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyDetection.cs" />
     <Compile Include="Assets\Scripts\ScriptableObject\InteractPromptDataScriptableObject.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyGraphicsParent.cs" />
+    <Compile Include="Assets\Scripts\DataObjects\ObjectiveData.cs" />
     <Compile Include="Assets\Scripts\UI\CameraCutoutObject.cs" />
     <Compile Include="Assets\Scripts\EnvironmentInteractable.cs" />
+    <Compile Include="Assets\Scripts\Utilities\ObjectiveDataProvider.cs" />
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Player.cs" />
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\UI\HealthBar.cs" />
@@ -73,18 +76,22 @@
     <Compile Include="Assets\Scripts\TYFPMenu.cs" />
     <Compile Include="Assets\Scripts\Rendering\BendayBloomEddectComponent.cs" />
     <Compile Include="Assets\Scripts\Story\StoryEvent_FirstToolUse.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Story\StoryEvent.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Interfaces\iInteractable.cs" />
     <Compile Include="Assets\Scripts\UI\InteractPromptObject.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
+    <Compile Include="Assets\Scripts\UI\Objectives\CurrentObjectiveModuleDataHandler.cs" />
     <Compile Include="Assets\Scripts\Story\EndGameInteraction.cs" />
     <Compile Include="Assets\Scripts\Interfaces\iDeposses.cs" />
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Tool.cs" />
     <Compile Include="Assets\Scripts\ForcedInteraction.cs" />
     <Compile Include="Assets\Scripts\Interfaces\iDialogueProvider.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\Utilities\DialogueDataProvider.cs" />
+    <Compile Include="Assets\Scripts\UI\InteractableVisuals.cs" />
     <Compile Include="Assets\Scripts\UI\CutsceneDialogueController.cs" />
     <Compile Include="Assets\Scripts\Story\StartGameInteraction.cs" />
     <Compile Include="Assets\Scripts\Story\StoryInteractable.cs" />
@@ -96,11 +103,9 @@
     <Compile Include="Assets\Scripts\PlayerStates\PlayerState_Weapon.cs" />
     <Compile Include="Assets\Scripts\PriestessFollowerMotor.cs" />
     <Compile Include="Assets\Scripts\UI\InteractPromptSpriteLoader.cs" />
-    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\UI\InteractPromptListener.cs" />
-    <Compile Include="Assets\Scripts\InteractableVisuals.cs" />
+    <Compile Include="Assets\Scripts\UI\Objectives\CurrentObjectiveModuleVisuals.cs" />
     <Compile Include="Assets\Scripts\UI\StaminaBar.cs" />
-    <Compile Include="Assets\Scripts\DialogueDataProvider.cs" />
     <Compile Include="Assets\Scripts\Story\StoryTracker.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -967,12 +972,12 @@
       <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.AI.Navigation">
-      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation">
+      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
@@ -997,6 +1002,10 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">

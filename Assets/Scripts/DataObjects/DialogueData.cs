@@ -7,4 +7,5 @@ public struct DialogueData
     public int speaker2;
     public string textBody;
     public string nextEventId;
+    public string objectiveId;
 }
